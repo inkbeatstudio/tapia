@@ -97,19 +97,18 @@ h3{font-size:clamp(19px,2vw,24px);}
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
-.header-row{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:24px;}
-.brand{display:flex;align-items:center;gap:12px;font-family:var(--font-display);font-weight:600;font-size:20px;}
+.header-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:24px;min-height:88px;}
+.brand{display:flex;align-items:center;gap:16px;font-family:var(--font-display);font-weight:600;font-size:20px;}
 .brand .logo-badge{
-  flex-shrink:0;width:52px;height:52px;border-radius:13px;background:var(--espresso);
-  display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(36,22,17,.28);
+  flex-shrink:0;width:68px;height:68px;border-radius:16px;background:var(--espresso);
+  display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(36,22,17,.3);
 }
-.brand .logo-badge img{height:32px;width:auto;display:block;filter:brightness(0) invert(1);}
-.brand .brand-word{display:flex;flex-direction:column;line-height:1.08;}
-.brand .brand-word b{font-size:22px;font-weight:700;letter-spacing:-.01em;color:var(--espresso);}
-.brand .brand-word span{font-family:var(--font-mono);font-size:10px;letter-spacing:.09em;color:var(--bronze-deep);text-transform:uppercase;margin-top:3px;font-weight:600;}
-.main-nav{display:flex;align-items:center;gap:30px;}
-.main-nav a{font-size:14.5px;font-weight:500;color:var(--coffee-soft);transition:color .15s;position:relative;margin-right:30px;}
-.main-nav a:last-child{margin-right:0;}
+.brand .logo-badge img{height:42px;width:auto;display:block;filter:brightness(0) invert(1);}
+.brand .brand-word{display:flex;flex-direction:column;line-height:1.1;white-space:nowrap;}
+.brand .brand-word b{font-size:26px;font-weight:700;letter-spacing:-.01em;color:var(--espresso);white-space:nowrap;}
+.brand .brand-word span{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;color:var(--bronze-deep);text-transform:uppercase;margin-top:4px;font-weight:600;white-space:nowrap;}
+.main-nav{display:flex;align-items:center;gap:26px;}
+.main-nav a{font-size:14.5px;font-weight:500;color:var(--coffee-soft);transition:color .15s;position:relative;}
 .main-nav a:hover, .main-nav a.active{color:var(--bronze-deep);}
 .header-actions{display:flex;align-items:center;gap:14px;}
 .lang-switch{position:relative;}
@@ -284,8 +283,9 @@ section{padding:96px 0;}
 .avatar-circle{
   width:100%;aspect-ratio:1/1;border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--linen),var(--bronze-glow));
   display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:34px;font-weight:600;
-  color:var(--espresso);margin-bottom:18px;
+  color:var(--espresso);margin-bottom:18px;overflow:hidden;
 }
+.avatar-circle img{width:100%;height:100%;object-fit:cover;}
 .team-card h4{font-family:var(--font-display);font-size:18px;margin-bottom:2px;}
 .team-card .role{font-family:var(--font-mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:14px;}
 .team-card .bio{font-size:13.5px;color:var(--coffee-soft);margin-bottom:12px;}
@@ -504,10 +504,10 @@ section{padding:96px 0;}
   .header-row{justify-content:space-between;}
   .brand{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);}
   .brand .brand-word span{display:none;}
-  .brand .logo-badge{width:44px;height:44px;border-radius:11px;}
-  .brand .logo-badge img{height:27px;}
-  .brand .brand-word b{font-size:16px;}
-  .header-row{position:relative;}
+  .brand .logo-badge{width:56px;height:56px;border-radius:13px;}
+  .brand .logo-badge img{height:34px;}
+  .brand .brand-word b{font-size:20px;}
+  .header-row{position:relative;min-height:76px;}
   .grid-3, .grid-2{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr;}
   .field-row{grid-template-columns:1fr;}
