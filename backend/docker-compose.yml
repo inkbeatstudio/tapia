@@ -1,0 +1,52 @@
+version: "3.9"
+
+# NOTE: if this runs on the same VPS as another project (e.g. Taralex),
+# keep these ports/names distinct so nothing collides:
+#   - postgres: 5433 (Taralex likely uses 5432)
+#   - api:      4001 (Taralex likely uses 4000)
+#   - container/volume names are prefixed "tepia_"
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: tepia_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: tepia_db
+      POSTGRES_USER: tepia_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-change_me}
+    volumes:
+      - tepia_pgdata:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:5433:5432"
+
+  api:
+    build: .
+    container_name: tepia_api
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      - postgres
+    ports:
+      - "127.0.0.1:4001:4000"
+    volumes:
+      - ./uploads:/app/uploads
+
+  nginx:
+    image: nginx:alpine
+    container_name: tepia_nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./public-site:/usr/share/nginx/html/site:ro
+      - ./admin-site:/usr/share/nginx/html/admin:ro
+      - ./error-pages:/usr/share/nginx/html/error-pages:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+    depends_on:
+      - api
+
+volumes:
+  tepia_pgdata:

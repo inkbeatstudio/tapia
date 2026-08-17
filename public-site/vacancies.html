@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TEPIA GROUP — Verified Job Vacancies Abroad</title>
+<meta name="description" content="Current verified vacancies in Poland, Germany and across the EU — with legal contracts and work permit support." />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png" />
+<link rel="stylesheet" href="assets/css/tepia.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo-icon.png" alt="TEPIA GROUP" />
+      <span class="brand-word"><b>TEPIA GROUP</b><span>Legal Employment Abroad</span></span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html#hero" data-i18n="nav.home">Home</a>
+      <a href="about.html" data-i18n="nav.about">About</a>
+      <a href="index.html#industries" data-i18n="nav.industries">Destinations</a>
+      <a href="vacancies.html" class="active" data-i18n="nav.searches">Vacancies</a>
+      <a href="blog.html" data-i18n="nav.blog">Guides</a>
+      <a href="for-employers.html" data-i18n="nav.employers">For Employers</a>
+      <a href="contacts.html" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switch">
+        <button class="lang-btn" type="button" aria-label="Change language">
+          <span class="lang-current">EN</span> ▾
+        </button>
+        <div class="lang-menu"></div>
+      </div>
+      <a href="contacts.html" class="btn btn-outline" data-i18n="nav.cta">Get a consultation</a>
+      <button class="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav">
+  <a href="index.html#hero" data-i18n="nav.home">Home</a>
+  <a href="about.html" data-i18n="nav.about">About</a>
+  <a href="index.html#industries" data-i18n="nav.industries">Destinations</a>
+  <a href="vacancies.html" data-i18n="nav.searches">Vacancies</a>
+  <a href="blog.html" data-i18n="nav.blog">Guides</a>
+  <a href="for-employers.html" data-i18n="nav.employers">For Employers</a>
+  <a href="contacts.html" data-i18n="nav.contact">Contact</a>
+</div>
+
+<main>
+
+<section class="mini-hero">
+  <div class="container">
+    <div class="eyebrow" data-i18n="vacPage.eyebrow">Vacancies</div>
+    <h1 data-i18n="vacPage.title">Current verified vacancies</h1>
+  </div>
+</section>
+
+<section>
+  <div class="container catalog-layout">
+    <aside class="filter-sidebar">
+      <input type="text" id="vacSearch" class="filter-search-input" data-i18n-placeholder="vacPage.search_ph" placeholder="Search by title or keyword" />
+      <div class="filter-group">
+        <h4 data-i18n="vacPage.filterCountry">Country</h4>
+        <label class="filter-checkbox"><input type="checkbox" value="Poland" checked> <span data-i18n="industries.i1_title">Poland</span></label>
+        <label class="filter-checkbox"><input type="checkbox" value="Germany" checked> <span data-i18n="industries.i2_title">Germany</span></label>
+        <label class="filter-checkbox"><input type="checkbox" value="Netherlands" checked> <span data-i18n="industries.i3_title">Netherlands</span></label>
+        <label class="filter-checkbox"><input type="checkbox" value="Czechia" checked> <span data-i18n="industries.i4_title">Czechia</span></label>
+        <label class="filter-checkbox"><input type="checkbox" value="Lithuania" checked> <span data-i18n="industries.i5_title">Lithuania</span></label>
+        <label class="filter-checkbox"><input type="checkbox" value="Slovakia" checked> <span data-i18n="industries.i6_title">Slovakia</span></label>
+      </div>
+      <div class="filter-group">
+        <h4 data-i18n="vacPage.filterGender">Gender</h4>
+        <label class="filter-checkbox"><input type="radio" name="vacGender" value="any" checked> <span data-i18n="vacPage.genderAny">Any</span></label>
+        <label class="filter-checkbox"><input type="radio" name="vacGender" value="male"> <span data-i18n="vacPage.genderMale">Male</span></label>
+        <label class="filter-checkbox"><input type="radio" name="vacGender" value="female"> <span data-i18n="vacPage.genderFemale">Female</span></label>
+      </div>
+      <div class="filter-group">
+        <label class="filter-checkbox"><input type="checkbox" id="vacHotOnly"> <span data-i18n="vacPage.hot">Urgent</span></label>
+        <label class="filter-checkbox"><input type="checkbox" id="vacHousingOnly"> <span data-i18n="vacPage.filterHousing">Housing provided</span></label>
+      </div>
+      <button type="button" class="filter-clear" id="vacFilterClear" data-i18n="vacPage.clearFilters">Reset filters</button>
+    </aside>
+
+    <div>
+      <div class="results-count" id="vacResultsCount">12 vacancies found</div>
+      <div class="cat-vac-grid" id="vacCatalogGrid"></div>
+      <div class="no-results" id="vacNoResults" style="display:none;">
+        <p data-i18n="vacPage.noResults">No vacancies match these filters. Try widening your search.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<template id="vacCardTemplate">
+  <div class="cat-vac-card">
+    <div class="hotvac-photo">
+      <span class="hotvac-flame" style="display:none;">🔥 <span data-i18n="vacPage.hot">Urgent</span></span>
+      <img loading="lazy">
+    </div>
+    <div class="hotvac-body">
+      <h3></h3>
+      <div class="meta-icon-row">
+        <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg><span class="m-loc"></span></div>
+        <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.4 1.3-2.5 3-2.5s3 1.1 3 2.5-1.3 2-3 2.5c-1.7.5-3 1.1-3 2.5s1.3 2.5 3 2.5 3-1.1 3-2.5"/></svg><span class="m-salary"></span></div>
+        <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg><span class="m-housing"></span></div>
+      </div>
+      <a class="btn btn-outline btn-sm" style="align-self:flex-start;" data-i18n="vacPage.apply">View &amp; apply</a>
+    </div>
+  </div>
+</template>
+
+<section class="section-alt">
+  <div class="container" style="max-width:640px;text-align:center;">
+    <h2 data-i18n="vacPage.subs_title">Get new vacancies by email</h2>
+    <p class="lede" style="margin:0 auto 24px;" data-i18n="vacPage.subs_text">One email whenever a new verified vacancy opens in your country of interest.</p>
+    <form data-lead-form style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <input type="email" name="email" data-required style="max-width:320px;border:1px solid var(--line);border-radius:999px;padding:12px 18px;font-family:var(--font-body);" data-i18n-placeholder="formSection.email" />
+      <button type="submit" class="btn btn-primary">
+        <span class="btn-label" data-i18n="vacPage.subs_btn">Subscribe</span>
+        <span class="spinner"></span>
+      </button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand"><img src="assets/img/logo-icon.png" alt="TEPIA GROUP" /><span class="brand-word"><b>TEPIA GROUP</b><span>Legal Employment Abroad</span></span></div>
+        <p style="max-width:280px;font-size:13.5px;" data-i18n="footer.tagline">Licensed employment agency for legal work across Europe.</p>
+        <div class="social-row">
+          <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.86-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5H16l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46H16.5V4.35A20 20 0 0 0 14.2 4.2c-2.28 0-3.84 1.4-3.84 3.96v2.34H8v3h2.36V21z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5 data-i18n="footer.col1">Company</h5>
+        <a href="about.html" data-i18n="footer.about">About TEPIA</a>
+        <a href="blog.html" data-i18n="footer.blog">Guides</a>
+        <a href="vacancies.html" data-i18n="footer.careers">Open vacancies</a>
+        <a href="privacy-policy.html" data-i18n="footer.privacy">Privacy Policy</a>
+      </div>
+      <div>
+        <h5 data-i18n="footer.col2">Services</h5>
+        <a href="#" data-i18n="footer.s1">Job placement</a>
+        <a href="#" data-i18n="footer.s2">Work permit &amp; visa support</a>
+        <a href="#" data-i18n="footer.s3">Housing assistance</a>
+        <a href="#" data-i18n="footer.s4">Staff outsourcing for employers</a>
+      </div>
+      <div>
+        <h5 data-i18n="footer.col3">Contact</h5>
+        <a href="mailto:office@tepiagroup.pl">office@tepiagroup.pl</a>
+        <a href="tel:+48221234567">+48 22 123 45 67</a>
+        <a href="contacts.html">ul. Złota 44, 00-120 Warszawa, Poland</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 TEPIA GROUP. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <span style="font-family:var(--font-mono);">LEGAL EMPLOYMENT ABROAD</span>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner">
+  <p><span data-i18n="cookie.text">We use cookies to improve your experience and for analytics. See our</span>
+    <a href="privacy-policy.html" style="text-decoration:underline;" data-i18n="cookie.link">Privacy Policy</a>.</p>
+  <div class="cookie-actions">
+    <button class="btn btn-outline btn-sm" data-cookie="declined" data-i18n="cookie.decline">Decline</button>
+    <button class="btn btn-primary btn-sm" data-cookie="accepted" data-i18n="cookie.accept">Accept</button>
+  </div>
+</div>
+
+<div class="float-stack float-messenger">
+  <div style="position:relative;">
+    <button class="fab" aria-label="Messengers">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/></svg>
+    </button>
+    <div class="messenger-panel">
+      <a href="https://wa.me/48221234567" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="https://t.me/tepiagroup" target="_blank" rel="noopener">Telegram</a>
+      <a href="mailto:office@tepiagroup.pl">Email</a>
+    </div>
+  </div>
+</div>
+<div class="float-stack float-top">
+  <button class="fab" aria-label="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/app.js"></script>
+<script src="assets/js/catalog.js"></script>
+</body>
+</html>
