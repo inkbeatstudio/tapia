@@ -120,7 +120,14 @@
               </div>
               <div class="field">
                 <div class="phone-field">
-                  <span class="phone-cc"><span class="cc-flag">PL</span><span class="cc-code">+48</span></span>
+                  <select class="phone-cc-select" aria-label="Country code">
+                <option value="+48" data-max="9" data-flag="PL" selected>🇵🇱 +48</option>
+                <option value="+380" data-max="9" data-flag="UA">🇺🇦 +380</option>
+                <option value="+49" data-max="11" data-flag="DE">🇩🇪 +49</option>
+                <option value="+40" data-max="9" data-flag="RO">🇷🇴 +40</option>
+                <option value="+7" data-max="10" data-flag="RU">🇷🇺 +7</option>
+                <option value="+44" data-max="10" data-flag="GB">🇬🇧 +44</option>
+              </select>
                   <input type="tel" name="phone" data-required data-i18n-placeholder="formSection.phone" placeholder="Phone">
                 </div>
               </div>
@@ -208,47 +215,47 @@
         <h2 data-i18n="industries.title">Verified vacancies across 9 European countries</h2>
       </div>
       <div class="grid-3">
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1748608684523-afa687945f5d?w=700&q=75&auto=format&fit=crop" alt="Warsaw, Poland" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i1_title">Poland</h3>
+            <p data-i18n="industries.i1_text">Warehouse, production and logistics roles near Warsaw, Kraków and Wrocław.</p>
           </div>
-          <h3 data-i18n="industries.i1_title">Poland</h3>
-          <p data-i18n="industries.i1_text">Warehouse, production and logistics roles near Warsaw, Kraków and Wrocław.</p>
         </div>
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1747119421266-742889fcde8a?w=700&q=75&auto=format&fit=crop" alt="Berlin, Germany" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i2_title">Germany</h3>
+            <p data-i18n="industries.i2_text">Manufacturing and warehouse positions with some of the highest net wages in the EU.</p>
           </div>
-          <h3 data-i18n="industries.i2_title">Germany</h3>
-          <p data-i18n="industries.i2_text">Manufacturing and warehouse positions with some of the highest net wages in the EU.</p>
         </div>
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1754835143820-bcf20e2e1a35?w=700&q=75&auto=format&fit=crop" alt="Amsterdam, Netherlands" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i3_title">Netherlands</h3>
+            <p data-i18n="industries.i3_text">Greenhouse, food processing and distribution centre jobs with company housing.</p>
           </div>
-          <h3 data-i18n="industries.i3_title">Netherlands</h3>
-          <p data-i18n="industries.i3_text">Greenhouse, food processing and distribution centre jobs with company housing.</p>
         </div>
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1681490586667-b003581dd8c5?w=700&q=75&auto=format&fit=crop" alt="Prague, Czechia" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i4_title">Czechia</h3>
+            <p data-i18n="industries.i4_text">Automotive and electronics assembly lines close to the Polish border.</p>
           </div>
-          <h3 data-i18n="industries.i4_title">Czechia</h3>
-          <p data-i18n="industries.i4_text">Automotive and electronics assembly lines close to the Polish border.</p>
         </div>
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1660562278746-72e961bb9644?w=700&q=75&auto=format&fit=crop" alt="Vilnius, Lithuania" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i5_title">Lithuania</h3>
+            <p data-i18n="industries.i5_text">Fast visa processing and short relocation distance from Ukraine and Belarus.</p>
           </div>
-          <h3 data-i18n="industries.i5_title">Lithuania</h3>
-          <p data-i18n="industries.i5_text">Fast visa processing and short relocation distance from Ukraine and Belarus.</p>
         </div>
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1505736450292-360dae3838a6?w=700&q=75&auto=format&fit=crop" alt="Bratislava, Slovakia" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i6_title">Slovakia</h3>
+            <p data-i18n="industries.i6_text">Manufacturing roles with simplified work permit procedures.</p>
           </div>
-          <h3 data-i18n="industries.i6_title">Slovakia</h3>
-          <p data-i18n="industries.i6_text">Manufacturing roles with simplified work permit procedures.</p>
         </div>
       </div>
     </div>
@@ -412,7 +419,14 @@
             <div class="field">
               <label data-i18n="formSection.phone">Phone</label>
               <div class="phone-field">
-                <span class="phone-cc"><span class="cc-flag">PL</span><span class="cc-code">+48</span></span>
+                <select class="phone-cc-select" aria-label="Country code">
+                <option value="+48" data-max="9" data-flag="PL" selected>🇵🇱 +48</option>
+                <option value="+380" data-max="9" data-flag="UA">🇺🇦 +380</option>
+                <option value="+49" data-max="11" data-flag="DE">🇩🇪 +49</option>
+                <option value="+40" data-max="9" data-flag="RO">🇷🇴 +40</option>
+                <option value="+7" data-max="10" data-flag="RU">🇷🇺 +7</option>
+                <option value="+44" data-max="10" data-flag="GB">🇬🇧 +44</option>
+              </select>
                 <input type="tel" name="phone" />
               </div>
               <div class="err-msg" data-i18n="formSection.contact_required">Enter a phone or an email</div>

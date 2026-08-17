@@ -98,28 +98,17 @@
     });
   }
 
-  // ---- phone country codes (lightweight static list) ----
-  const CC = [
-    { c: "PL", d: "+48", max: 9 },
-    { c: "UA", d: "+380", max: 9 },
-    { c: "DE", d: "+49", max: 11 },
-    { c: "RO", d: "+40", max: 9 },
-    { c: "RU", d: "+7", max: 10 },
-    { c: "GB", d: "+44", max: 10 },
-  ];
+  // ---- phone country code dropdown ----
   document.querySelectorAll(".phone-field").forEach((field) => {
-    const ccBtn = field.querySelector(".phone-cc");
+    const select = field.querySelector(".phone-cc-select");
     const input = field.querySelector("input");
-    if (!ccBtn || !input) return;
-    let idx = 0;
-    ccBtn.querySelector(".cc-code").textContent = CC[idx].d;
-    input.setAttribute("maxlength", CC[idx].max);
-    ccBtn.addEventListener("click", () => {
-      idx = (idx + 1) % CC.length;
-      ccBtn.querySelector(".cc-code").textContent = CC[idx].d;
-      ccBtn.querySelector(".cc-flag").textContent = CC[idx].c;
-      input.setAttribute("maxlength", CC[idx].max);
-    });
+    if (!select || !input) return;
+    const applyMax = () => {
+      const opt = select.options[select.selectedIndex];
+      input.setAttribute("maxlength", opt.dataset.max || 15);
+    };
+    applyMax();
+    select.addEventListener("change", applyMax);
   });
 
   // ---- multi-step quiz widget (hero) ----

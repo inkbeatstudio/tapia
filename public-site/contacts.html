@@ -76,7 +76,14 @@
           <div class="field">
             <label data-i18n="formSection.phone">Phone</label>
             <div class="phone-field">
-              <span class="phone-cc"><span class="cc-flag">PL</span><span class="cc-code">+48</span></span>
+              <select class="phone-cc-select" aria-label="Country code">
+                <option value="+48" data-max="9" data-flag="PL" selected>🇵🇱 +48</option>
+                <option value="+380" data-max="9" data-flag="UA">🇺🇦 +380</option>
+                <option value="+49" data-max="11" data-flag="DE">🇩🇪 +49</option>
+                <option value="+40" data-max="9" data-flag="RO">🇷🇴 +40</option>
+                <option value="+7" data-max="10" data-flag="RU">🇷🇺 +7</option>
+                <option value="+44" data-max="10" data-flag="GB">🇬🇧 +44</option>
+              </select>
               <input type="tel" name="phone" />
             </div>
             <div class="err-msg" data-i18n="formSection.contact_required">Enter a phone or an email</div>
@@ -102,6 +109,7 @@
       </form>
     </div>
     <div>
+      <img src="https://images.unsplash.com/photo-1748608684523-afa687945f5d?w=900&q=75&auto=format&fit=crop" alt="Warsaw, Poland" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:var(--radius-lg);border:1px solid var(--line);margin-bottom:22px;">
       <div class="eyebrow" data-i18n="contactsPage.offices_eyebrow">Offices</div>
       <div style="display:flex;flex-direction:column;gap:16px;margin-top:18px;">
         <div class="office-card">
