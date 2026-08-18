@@ -148,7 +148,6 @@ h3{font-size:clamp(19px,2vw,24px);}
   position:absolute;inset:0;z-index:1;
   background:linear-gradient(180deg, var(--parchment) 0%, rgba(250,245,236,.75) 45%, var(--parchment) 100%);
 }
-.hero-bg-label{position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:2;}
 .hero > .container{position:relative;z-index:3;}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
 .hero-copy .btn-row{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
@@ -183,16 +182,9 @@ section{padding:96px 0;}
 .card p{color:var(--muted);font-size:14.5px;margin-bottom:0;}
 
 /* ---- destination card with photo ---- */
-/* ---- image slots: dev labels + graceful fallback + brand grading ---- */
+/* ---- image slots: graceful fallback + brand grading ---- */
 .img-slot{position:relative;display:block;}
 .img-slot img{filter:saturate(.93) contrast(1.03);}
-.img-slot-label{
-  position:absolute;top:10px;left:10px;z-index:5;
-  background:rgba(36,22,17,.86);color:#fff;font-family:var(--font-mono);
-  font-size:10.5px;padding:5px 10px;border-radius:6px;letter-spacing:.02em;
-  pointer-events:none;max-width:calc(100% - 20px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-  box-shadow:0 2px 8px rgba(0,0,0,.18);
-}
 .img-slot-broken img{opacity:0;}
 .img-slot-broken{
   background:repeating-linear-gradient(45deg,var(--linen) 0 12px,var(--card) 12px 24px);
@@ -202,11 +194,6 @@ section{padding:96px 0;}
   content:"replace this image";
   position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
   font-family:var(--font-mono);font-size:11.5px;color:var(--muted);letter-spacing:.03em;text-align:center;padding:20px;
-}
-
-/* ---- responsive: keep labels legible on small photo tiles ---- */
-@media (max-width:720px){
-  .img-slot-label{font-size:9.5px;padding:4px 8px;top:8px;left:8px;}
 }
 
 .card-photo{padding:0;overflow:hidden;}
@@ -482,7 +469,6 @@ section{padding:96px 0;}
   content:"";position:absolute;inset:0;z-index:1;
   background:linear-gradient(120deg,rgba(36,22,17,.88),rgba(62,42,30,.82));
 }
-.cta-banner-label{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:2;}
 .cta-banner-inner{position:relative;z-index:3;}
 .cta-banner h2{color:#fff;}
 .cta-banner p{color:#D9C8AF;max-width:520px;margin:0 auto 28px;}
