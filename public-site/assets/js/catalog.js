@@ -120,6 +120,7 @@
     });
 
     if (window.TEPIA_I18N) window.TEPIA_I18N.applyLang(lang);
+    if (window.TEPIA_IMG_LABELS) window.TEPIA_IMG_LABELS.scan(grid);
   }
 
   [searchInput, hotOnly, housingOnly, ...countryChecks, ...genderRadios].forEach((el) => {
