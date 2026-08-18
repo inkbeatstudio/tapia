@@ -5,15 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>TEPIA GROUP — Legal Employment Abroad</title>
 <meta name="description" content="TEPIA GROUP is a licensed Warsaw-based employment agency matching candidates with verified, legal vacancies in Poland, Germany and across the EU." />
-<link rel="icon" href="assets/img/logo.png" />
+<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+<link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png" />
 <link rel="stylesheet" href="assets/css/tepia.css" />
 </head>
 <body>
 
 <header class="site-header">
   <div class="container header-row">
+    <button class="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
     <a href="index.html" class="brand">
-      <img src="assets/img/logo.png" alt="TEPIA GROUP" />
+      <span class="logo-badge"><img src="assets/img/logo-icon.png" alt="TEPIA GROUP" /></span>
+      <span class="brand-word"><b>TEPIA GROUP</b><span>Legal Employment Abroad</span></span>
     </a>
     <nav class="main-nav">
       <a href="#hero" class="active" data-i18n="nav.home">Home</a>
@@ -32,7 +36,6 @@
         <div class="lang-menu"></div>
       </div>
       <a href="#consult" class="btn btn-outline" data-i18n="nav.cta">Get a consultation</a>
-      <button class="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
@@ -51,6 +54,9 @@
 
   <!-- HERO -->
   <section class="hero" id="hero">
+    <img class="hero-bg-photo" data-no-slot src="https://images.unsplash.com/photo-1749244768351-2726dc23d26c?w=2200&q=70&auto=format&fit=crop" alt="">
+    <span class="img-slot-label hero-bg-label">Hero background — replace via admin Media</span>
+    <div class="hero-bg-overlay"></div>
     <div class="container hero-grid">
       <div class="hero-copy">
         <div class="eyebrow" data-i18n="hero.eyebrow">Legal Employment Abroad · Warsaw</div>
@@ -82,52 +88,129 @@
       </div>
 
       <div class="hero-visual">
-        <svg class="ascend-graphic" viewBox="0 0 520 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ascending career trajectory graphic">
-          <defs>
-            <linearGradient id="ascendLine" x1="0" y1="1" x2="1" y2="0">
-              <stop offset="0" stop-color="#8F5A26"/>
-              <stop offset="1" stop-color="#E4B27B"/>
-            </linearGradient>
-            <radialGradient id="dotGlow" cx="0.5" cy="0.5" r="0.5">
-              <stop offset="0" stop-color="#FAF5EC"/>
-              <stop offset="1" stop-color="#F1E7D8" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <rect x="0" y="0" width="520" height="460" rx="28" fill="#F1E7D8"/>
-          <g stroke="#E3D3BB" stroke-width="1">
-            <line x1="40" y1="380" x2="480" y2="380"/>
-            <line x1="40" y1="300" x2="480" y2="300"/>
-            <line x1="40" y1="220" x2="480" y2="220"/>
-            <line x1="40" y1="140" x2="480" y2="140"/>
-          </g>
-          <polyline points="60,380 150,340 150,380" fill="none" stroke="none"/>
-          <path d="M60 400 L150 330 L240 350 L330 220 L420 150 L470 90"
-                fill="none" stroke="url(#ascendLine)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-          <g font-family="IBM Plex Mono, monospace" font-size="11" fill="#8A7862">
-            <circle cx="60" cy="400" r="22" fill="url(#dotGlow)"/>
-            <circle cx="60" cy="400" r="6" fill="#3E2A1E"/>
-            <text x="30" y="428">CONSULT</text>
+        <div class="quiz-card" data-quiz>
+          <div class="quiz-progress">1/3</div>
+          <h3 data-i18n="quiz.title">Answer 3 quick questions — we'll match a vacancy for you</h3>
 
-            <circle cx="150" cy="330" r="22" fill="url(#dotGlow)"/>
-            <circle cx="150" cy="330" r="6" fill="#3E2A1E"/>
-            <text x="112" y="358">MATCHING</text>
+          <div class="quiz-step active">
+            <p style="font-size:13.5px;font-weight:600;margin-bottom:14px;" data-i18n="quiz.step1_q">I'm looking for a job for:</p>
+            <div class="quiz-options">
+              <div class="quiz-option" data-field="gender" data-value="male"><span class="dot"></span><span data-i18n="quiz.opt_man">A man</span></div>
+              <div class="quiz-option" data-field="gender" data-value="female"><span class="dot"></span><span data-i18n="quiz.opt_woman">A woman</span></div>
+              <div class="quiz-option" data-field="gender" data-value="couple"><span class="dot"></span><span data-i18n="quiz.opt_couple">A couple</span></div>
+            </div>
+            <div class="quiz-nav"><span></span><button type="button" class="btn btn-primary btn-sm" data-quiz-next disabled data-i18n="quiz.next">Next ></button></div>
+          </div>
 
-            <circle cx="240" cy="350" r="22" fill="url(#dotGlow)"/>
-            <circle cx="240" cy="350" r="6" fill="#3E2A1E"/>
-            <text x="207" y="378">PERMIT</text>
+          <div class="quiz-step">
+            <p style="font-size:13.5px;font-weight:600;margin-bottom:14px;" data-i18n="quiz.step2_q">I'm currently in:</p>
+            <div class="quiz-options">
+              <div class="quiz-option" data-field="location" data-value="poland"><span class="dot"></span><span data-i18n="quiz.opt_poland">Poland</span></div>
+              <div class="quiz-option" data-field="location" data-value="ukraine"><span class="dot"></span><span data-i18n="quiz.opt_ukraine">Ukraine</span></div>
+              <div class="quiz-option" data-field="location" data-value="other"><span class="dot"></span><span data-i18n="quiz.opt_other">Another country</span></div>
+            </div>
+            <div class="quiz-nav">
+              <button type="button" class="btn btn-outline btn-sm" data-quiz-back data-i18n="quiz.back">< Back</button>
+              <button type="button" class="btn btn-primary btn-sm" data-quiz-next disabled data-i18n="quiz.next">Next ></button>
+            </div>
+          </div>
 
-            <circle cx="330" cy="220" r="22" fill="url(#dotGlow)"/>
-            <circle cx="330" cy="220" r="6" fill="#B87A3D"/>
-            <text x="300" y="248">TRAVEL</text>
+          <div class="quiz-step">
+            <form data-lead-form>
+              <p style="font-size:13.5px;font-weight:600;margin-bottom:14px;" data-i18n="quiz.step3_q">My contact details:</p>
+              <div class="field">
+                <input type="text" name="name" data-required data-i18n-placeholder="formSection.name" placeholder="Full name">
+              </div>
+              <div class="field">
+                <div class="phone-field">
+                  <select class="phone-cc-select" aria-label="Country code">
+                <option value="+48" data-max="9" data-flag="PL" selected>🇵🇱 +48</option>
+                <option value="+380" data-max="9" data-flag="UA">🇺🇦 +380</option>
+                <option value="+49" data-max="11" data-flag="DE">🇩🇪 +49</option>
+                <option value="+40" data-max="9" data-flag="RO">🇷🇴 +40</option>
+                <option value="+7" data-max="10" data-flag="RU">🇷🇺 +7</option>
+                <option value="+44" data-max="10" data-flag="GB">🇬🇧 +44</option>
+              </select>
+                  <input type="tel" name="phone" data-required data-i18n-placeholder="formSection.phone" placeholder="Phone">
+                </div>
+              </div>
+              <div class="quiz-nav">
+                <button type="button" class="btn btn-outline btn-sm" data-quiz-back data-i18n="quiz.back">< Back</button>
+                <button type="submit" class="btn btn-bronze btn-sm">
+                  <span class="btn-label" data-i18n="quiz.submit">Get matched ></span>
+                  <span class="spinner"></span>
+                </button>
+              </div>
+            </form>
+          </div>
 
-            <circle cx="420" cy="150" r="24" fill="url(#dotGlow)"/>
-            <circle cx="420" cy="150" r="7" fill="#B87A3D"/>
-            <text x="398" y="178">ARRIVE</text>
+          <div class="quiz-dots"><span class="active"></span><span></span><span></span></div>
+        </div>
+      </div>
+    </div>
 
-            <circle cx="470" cy="90" r="26" fill="#241611"/>
-            <text x="458" y="64" fill="#241611" font-weight="600">WORK</text>
-          </g>
-        </svg>
+    <div class="container trust-row">
+      <div class="trust-item">
+        <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><path d="M9 11l2 2 4-4"/></svg></div>
+        <div><h4 data-i18n="about.v1_t">Only legal contracts</h4><p data-i18n="about.v1_d">Verified employers and registered work permits — no shady schemes, ever.</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 3 6v6c0 5 3.8 8.7 9 10 5.2-1.3 9-5 9-10V6z"/></svg></div>
+        <div><h4 data-i18n="about.v2_t">Everything fixed in writing</h4><p data-i18n="about.v2_d">Salary, housing and schedule are agreed in the contract before you travel.</p></div>
+      </div>
+      <div class="trust-item">
+        <div class="icon-badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M17 20h5v-1a4 4 0 0 0-3-3.87M9 20H4v-1a4 4 0 0 1 3-3.87m5-4.13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6 0a4 4 0 1 0 0-8"/></svg></div>
+        <div><h4 data-i18n="about.v3_t">A manager for the whole contract</h4><p data-i18n="about.v3_d">Your personal manager stays reachable for as long as your contract runs.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BANNER -->
+  <section style="padding:0;">
+    <img src="https://images.unsplash.com/photo-1758518730384-be3d205838e8?w=2000&q=75&auto=format&fit=crop" alt="People starting new jobs abroad" style="width:100%;height:340px;object-fit:cover;display:block;">
+  </section>
+
+  <!-- HOT VACANCIES -->
+  <section class="section-alt" id="hot-vacancies">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow" data-i18n="hotvac.eyebrow">Urgent Vacancies</div>
+        <h2 data-i18n="hotvac.title">Roles we need to fill this week</h2>
+      </div>
+      <div class="grid-2">
+        <div class="hotvac-card">
+          <div class="hotvac-photo">
+            <span class="hotvac-flame">🔥 <span data-i18n="vacPage.hot">Urgent</span></span>
+            <img src="https://images.unsplash.com/photo-1749244768351-2726dc23d26c?w=900&q=75&auto=format&fit=crop" alt="Warehouse packing" loading="lazy">
+          </div>
+          <div class="hotvac-body">
+            <h3 data-i18n="hotvac.v1_title">Warehouse Packer — French Grocery Chain</h3>
+            <div class="meta-icon-row">
+              <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg><span><b data-i18n="hotvac.loc">Location</b> — <span data-i18n="hotvac.v1_loc">Wrocław area, Poland</span></span></div>
+              <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.4 1.3-2.5 3-2.5s3 1.1 3 2.5-1.3 2-3 2.5c-1.7.5-3 1.1-3 2.5s1.3 2.5 3 2.5 3-1.1 3-2.5"/></svg><span><b data-i18n="hotvac.salary">Salary</b> — <span data-i18n="hotvac.v1_salary">from 6,100 PLN gross</span></span></div>
+              <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg><span><b data-i18n="hotvac.housing">Housing</b> — <span data-i18n="hotvac.v1_housing">20 PLN/day</span></span></div>
+            </div>
+            <a href="vacancy.html?slug=warehouse-packer-wroclaw" class="btn btn-outline btn-sm" style="align-self:flex-start;" data-i18n="hotvac.apply">Details</a>
+          </div>
+        </div>
+        <div class="hotvac-card">
+          <div class="hotvac-photo">
+            <span class="hotvac-flame">🔥 <span data-i18n="vacPage.hot">Urgent</span></span>
+            <img src="https://images.unsplash.com/photo-1742535038366-e1e1350a27fe?w=900&q=75&auto=format&fit=crop" alt="Production line" loading="lazy">
+          </div>
+          <div class="hotvac-body">
+            <h3 data-i18n="hotvac.v2_title">Ready-Meal Production Operator</h3>
+            <div class="meta-icon-row">
+              <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg><span><b data-i18n="hotvac.loc">Location</b> — <span data-i18n="hotvac.v2_loc">Zawiercie, Poland</span></span></div>
+              <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.4 1.3-2.5 3-2.5s3 1.1 3 2.5-1.3 2-3 2.5c-1.7.5-3 1.1-3 2.5s1.3 2.5 3 2.5 3-1.1 3-2.5"/></svg><span><b data-i18n="hotvac.salary">Salary</b> — <span data-i18n="hotvac.v2_salary">from 6,500 PLN gross</span></span></div>
+              <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg><span><b data-i18n="hotvac.housing">Housing</b> — <span data-i18n="hotvac.v2_housing">from 450 PLN/month</span></span></div>
+            </div>
+            <a href="vacancy.html?slug=production-line-berlin" class="btn btn-outline btn-sm" style="align-self:flex-start;" data-i18n="hotvac.apply">Details</a>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:36px;">
+        <a href="vacancies.html?hot=1" class="btn btn-outline" data-i18n="hotvac.all">All urgent vacancies</a>
       </div>
     </div>
   </section>
@@ -140,47 +223,47 @@
         <h2 data-i18n="industries.title">Verified vacancies across 9 European countries</h2>
       </div>
       <div class="grid-3">
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1748608684523-afa687945f5d?w=700&q=75&auto=format&fit=crop" alt="Warsaw, Poland" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i1_title">Poland</h3>
+            <p data-i18n="industries.i1_text">Warehouse, production and logistics roles near Warsaw, Kraków and Wrocław.</p>
           </div>
-          <h3 data-i18n="industries.i1_title">Poland</h3>
-          <p data-i18n="industries.i1_text">Warehouse, production and logistics roles near Warsaw, Kraków and Wrocław.</p>
         </div>
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1747119421266-742889fcde8a?w=700&q=75&auto=format&fit=crop" alt="Berlin, Germany" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i2_title">Germany</h3>
+            <p data-i18n="industries.i2_text">Manufacturing and warehouse positions with some of the highest net wages in the EU.</p>
           </div>
-          <h3 data-i18n="industries.i2_title">Germany</h3>
-          <p data-i18n="industries.i2_text">Manufacturing and warehouse positions with some of the highest net wages in the EU.</p>
         </div>
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1754835143820-bcf20e2e1a35?w=700&q=75&auto=format&fit=crop" alt="Amsterdam, Netherlands" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i3_title">Netherlands</h3>
+            <p data-i18n="industries.i3_text">Greenhouse, food processing and distribution centre jobs with company housing.</p>
           </div>
-          <h3 data-i18n="industries.i3_title">Netherlands</h3>
-          <p data-i18n="industries.i3_text">Greenhouse, food processing and distribution centre jobs with company housing.</p>
         </div>
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1681490586667-b003581dd8c5?w=700&q=75&auto=format&fit=crop" alt="Prague, Czechia" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i4_title">Czechia</h3>
+            <p data-i18n="industries.i4_text">Automotive and electronics assembly lines close to the Polish border.</p>
           </div>
-          <h3 data-i18n="industries.i4_title">Czechia</h3>
-          <p data-i18n="industries.i4_text">Automotive and electronics assembly lines close to the Polish border.</p>
         </div>
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1660562278746-72e961bb9644?w=700&q=75&auto=format&fit=crop" alt="Vilnius, Lithuania" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i5_title">Lithuania</h3>
+            <p data-i18n="industries.i5_text">Fast visa processing and short relocation distance from Ukraine and Belarus.</p>
           </div>
-          <h3 data-i18n="industries.i5_title">Lithuania</h3>
-          <p data-i18n="industries.i5_text">Fast visa processing and short relocation distance from Ukraine and Belarus.</p>
         </div>
-        <div class="card">
-          <div class="icon-badge">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg>
+        <div class="card card-photo">
+          <img class="card-photo-img" src="https://images.unsplash.com/photo-1505736450292-360dae3838a6?w=700&q=75&auto=format&fit=crop" alt="Bratislava, Slovakia" loading="lazy">
+          <div class="card-photo-body">
+            <h3 data-i18n="industries.i6_title">Slovakia</h3>
+            <p data-i18n="industries.i6_text">Manufacturing roles with simplified work permit procedures.</p>
           </div>
-          <h3 data-i18n="industries.i6_title">Slovakia</h3>
-          <p data-i18n="industries.i6_text">Manufacturing roles with simplified work permit procedures.</p>
         </div>
       </div>
     </div>
@@ -293,9 +376,41 @@
     </div>
   </section>
 
+  <!-- OFFICES STRIP -->
+  <section id="offices">
+    <div class="container">
+      <div class="section-head center">
+        <div class="eyebrow" data-i18n="officesStrip.eyebrow">Our Offices</div>
+        <h2 data-i18n="officesStrip.title">Drop by in person in five Polish cities</h2>
+      </div>
+      <div class="offices-strip">
+        <div class="office-mini"><h4>Warszawa</h4><p>+48 22 123 45 67</p></div>
+        <div class="office-mini"><h4>Wrocław</h4><p>+48 71 234 56 78</p></div>
+        <div class="office-mini"><h4>Kraków</h4><p>+48 12 345 67 89</p></div>
+        <div class="office-mini"><h4>Poznań</h4><p>+48 61 456 78 90</p></div>
+        <div class="office-mini"><h4>Łódź</h4><p>+48 42 567 89 01</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section>
+    <div class="container">
+      <div class="cta-banner">
+        <img class="cta-banner-photo" data-no-slot src="https://images.unsplash.com/photo-1742535038366-e1e1350a27fe?w=1800&q=70&auto=format&fit=crop" alt="">
+        <span class="img-slot-label cta-banner-label">CTA banner background — replace via admin Media</span>
+        <div class="cta-banner-inner">
+          <h2 data-i18n="ctaBanner.title">Find a vacancy with TEPIA and start working now</h2>
+          <p data-i18n="ctaBanner.text">Free service for candidates. No hidden fees, ever.</p>
+          <a href="vacancies.html" class="btn btn-bronze" data-i18n="ctaBanner.cta">Find a vacancy</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CONSULT FORM -->
   <section class="section-alt" id="consult">
-    <div class="container" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;">
+    <div class="container split-2col">
       <div>
         <div class="eyebrow" data-i18n="formSection.eyebrow">Get Started</div>
         <h2 data-i18n="formSection.title">Leave a request — we'll match a vacancy for you</h2>
@@ -316,7 +431,14 @@
             <div class="field">
               <label data-i18n="formSection.phone">Phone</label>
               <div class="phone-field">
-                <span class="phone-cc"><span class="cc-flag">PL</span><span class="cc-code">+48</span></span>
+                <select class="phone-cc-select" aria-label="Country code">
+                <option value="+48" data-max="9" data-flag="PL" selected>🇵🇱 +48</option>
+                <option value="+380" data-max="9" data-flag="UA">🇺🇦 +380</option>
+                <option value="+49" data-max="11" data-flag="DE">🇩🇪 +49</option>
+                <option value="+40" data-max="9" data-flag="RO">🇷🇴 +40</option>
+                <option value="+7" data-max="10" data-flag="RU">🇷🇺 +7</option>
+                <option value="+44" data-max="10" data-flag="GB">🇬🇧 +44</option>
+              </select>
                 <input type="tel" name="phone" />
               </div>
               <div class="err-msg" data-i18n="formSection.contact_required">Enter a phone or an email</div>
@@ -350,7 +472,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <div class="footer-brand"><img src="assets/img/logo.png" alt="TEPIA GROUP" /> TEPIA GROUP</div>
+        <div class="footer-brand"><img src="assets/img/logo-icon.png" alt="TEPIA GROUP" /><span class="brand-word"><b>TEPIA GROUP</b><span>Legal Employment Abroad</span></span></div>
         <p style="max-width:280px;font-size:13.5px;" data-i18n="footer.tagline">Licensed employment agency for legal work across Europe.</p>
         <div class="social-row">
           <a href="#" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2 3.77-2 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.6c0-1.34-.02-3.06-1.86-3.06-1.87 0-2.16 1.46-2.16 2.96V21H9z"/></svg></a>
@@ -414,5 +536,6 @@
 
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/app.js"></script>
+<script src="assets/js/image-labels.js"></script>
 </body>
 </html>

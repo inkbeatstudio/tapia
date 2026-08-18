@@ -1,0 +1,46 @@
+scp -r backend/* root@185.67.0.116:/opt/taralex/backend/
+
+XW75G14uQ*S?55
+
+
+
+
+ssh root@185.67.0.116
+
+XW75G14uQ*S?55
+
+
+
+cd /opt/taralex/backend
+
+ls docker-compose.yml
+
+docker compose ps
+
+docker cp seed-content.sql $(docker compose ps -q postgres):/tmp/seed-content.sql
+docker compose exec postgres psql -U taralex_user -d taralex_db -f /tmp/seed-content.sql
+
+
+docker compose exec api npm run migrate
+docker compose up -d --build
+
+
+ssh root@185.67.0.116
+XW75G14uQ*S?55
+
+chmod 755 /opt /opt/taralex /opt/taralex/backend
+
+find /opt/taralex/backend/public-site -type d -exec chmod 755 {} \;
+find /opt/taralex/backend/public-site -type f -exec chmod 644 {} \;
+
+find /opt/taralex/backend/admin-site -type d -exec chmod 755 {} \;
+find /opt/taralex/backend/admin-site -type f -exec chmod 644 {} \;
+
+find /opt/taralex/backend/error-pages -type d -exec chmod 755 {} \;
+find /opt/taralex/backend/error-pages -type f -exec chmod 644 {} \;
+
+cd /opt/taralex/backend
+docker compose restart nginx
+
+
+

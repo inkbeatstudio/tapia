@@ -98,28 +98,93 @@
     });
   }
 
-  // ---- phone country codes (lightweight static list) ----
-  const CC = [
-    { c: "PL", d: "+48", max: 9 },
-    { c: "UA", d: "+380", max: 9 },
-    { c: "DE", d: "+49", max: 11 },
-    { c: "RO", d: "+40", max: 9 },
-    { c: "RU", d: "+7", max: 10 },
-    { c: "GB", d: "+44", max: 10 },
-  ];
+  // ---- phone country code dropdown + digits-only input with per-country length limit ----
   document.querySelectorAll(".phone-field").forEach((field) => {
-    const ccBtn = field.querySelector(".phone-cc");
+    const select = field.querySelector(".phone-cc-select");
     const input = field.querySelector("input");
-    if (!ccBtn || !input) return;
-    let idx = 0;
-    ccBtn.querySelector(".cc-code").textContent = CC[idx].d;
-    input.setAttribute("maxlength", CC[idx].max);
-    ccBtn.addEventListener("click", () => {
-      idx = (idx + 1) % CC.length;
-      ccBtn.querySelector(".cc-code").textContent = CC[idx].d;
-      ccBtn.querySelector(".cc-flag").textContent = CC[idx].c;
-      input.setAttribute("maxlength", CC[idx].max);
+    if (!select || !input) return;
+
+    const applyMax = () => {
+      const opt = select.options[select.selectedIndex];
+      const max = Number(opt.dataset.max) || 15;
+      input.setAttribute("maxlength", max);
+      input.setAttribute("inputmode", "numeric");
+      input.setAttribute("pattern", "[0-9]*");
+      // trim any existing value down to the new country's max length
+      if (input.value.length > max) input.value = input.value.slice(0, max);
+    };
+    applyMax();
+    select.addEventListener("change", applyMax);
+
+    // strip anything that isn't a digit as the person types, live
+    input.addEventListener("input", () => {
+      const max = Number(select.options[select.selectedIndex].dataset.max) || 15;
+      const digitsOnly = input.value.replace(/\D/g, "").slice(0, max);
+      if (digitsOnly !== input.value) input.value = digitsOnly;
     });
+    // block obviously non-numeric key presses (still allows paste, backspace, arrows, etc.)
+    input.addEventListener("keypress", (e) => {
+      if (e.key.length === 1 && !/[0-9]/.test(e.key)) e.preventDefault();
+    });
+  });
+
+  // ---- multi-step quiz widget (hero) ----
+  document.querySelectorAll(".quiz-card[data-quiz]").forEach((card) => {
+    const steps = Array.from(card.querySelectorAll(".quiz-step"));
+    const dots = Array.from(card.querySelectorAll(".quiz-dots span"));
+    const progressEl = card.querySelector(".quiz-progress");
+    let current = 0;
+    const answers = {};
+
+    function render() {
+      steps.forEach((s, i) => s.classList.toggle("active", i === current));
+      dots.forEach((d, i) => d.classList.toggle("active", i === current));
+      if (progressEl) progressEl.textContent = `${Math.min(current + 1, steps.length)}/${steps.length}`;
+    }
+
+    card.querySelectorAll(".quiz-option").forEach((opt) => {
+      opt.addEventListener("click", () => {
+        const group = opt.closest(".quiz-step");
+        group.querySelectorAll(".quiz-option").forEach((o) => o.classList.remove("selected"));
+        opt.classList.add("selected");
+        answers[opt.dataset.field] = opt.dataset.value;
+        const nextBtn = group.querySelector("[data-quiz-next]");
+        if (nextBtn) nextBtn.disabled = false;
+      });
+    });
+
+    card.querySelectorAll("[data-quiz-next]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (current < steps.length - 1) { current++; render(); }
+      });
+    });
+    card.querySelectorAll("[data-quiz-back]").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        if (current > 0) { current--; render(); }
+      });
+    });
+
+    const form = card.querySelector("form");
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        let valid = true;
+        form.querySelectorAll("[data-required]").forEach((field) => {
+          const wrap = field.closest(".field");
+          if (!field.value.trim()) { wrap.classList.add("error"); valid = false; }
+          else wrap.classList.remove("error");
+        });
+        if (!valid) return;
+        const submitBtn = form.querySelector('button[type="submit"]');
+        if (submitBtn) submitBtn.classList.add("is-loading");
+        answers.name = form.querySelector('[name="name"]')?.value;
+        answers.phone = form.querySelector('[name="phone"]')?.value;
+        answers.email = form.querySelector('[name="email"]')?.value;
+        // Placeholder for real API call (POST /api/leads with quiz answers).
+        setTimeout(() => { window.location.href = "thank-you.html"; }, 700);
+      });
+    }
+    render();
   });
 
   // ---- generic form handling: validation + fake-submit -> thank-you ----

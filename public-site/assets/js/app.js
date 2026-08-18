@@ -98,17 +98,34 @@
     });
   }
 
-  // ---- phone country code dropdown ----
+  // ---- phone country code dropdown + digits-only input with per-country length limit ----
   document.querySelectorAll(".phone-field").forEach((field) => {
     const select = field.querySelector(".phone-cc-select");
     const input = field.querySelector("input");
     if (!select || !input) return;
+
     const applyMax = () => {
       const opt = select.options[select.selectedIndex];
-      input.setAttribute("maxlength", opt.dataset.max || 15);
+      const max = Number(opt.dataset.max) || 15;
+      input.setAttribute("maxlength", max);
+      input.setAttribute("inputmode", "numeric");
+      input.setAttribute("pattern", "[0-9]*");
+      // trim any existing value down to the new country's max length
+      if (input.value.length > max) input.value = input.value.slice(0, max);
     };
     applyMax();
     select.addEventListener("change", applyMax);
+
+    // strip anything that isn't a digit as the person types, live
+    input.addEventListener("input", () => {
+      const max = Number(select.options[select.selectedIndex].dataset.max) || 15;
+      const digitsOnly = input.value.replace(/\D/g, "").slice(0, max);
+      if (digitsOnly !== input.value) input.value = digitsOnly;
+    });
+    // block obviously non-numeric key presses (still allows paste, backspace, arrows, etc.)
+    input.addEventListener("keypress", (e) => {
+      if (e.key.length === 1 && !/[0-9]/.test(e.key)) e.preventDefault();
+    });
   });
 
   // ---- multi-step quiz widget (hero) ----

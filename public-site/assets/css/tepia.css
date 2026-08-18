@@ -23,6 +23,14 @@
   --success:#4C7A55;
   --danger:#B4432E;
 
+  /* ---- secondary accent, pulled from the logo's blue gradient ----
+     used sparingly (badge glow, a couple of small accents) so the
+     brand mark doesn't feel like a foreign color dropped on a
+     monochrome brown site. */
+  --signal-blue:#2E6E8E;
+  --signal-blue-deep:#1F4E66;
+  --signal-blue-glow:#8FC4DC;
+
   /* ---- type ---- */
   --font-display:'Fraunces', Georgia, serif;
   --font-body:'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -100,13 +108,15 @@ h3{font-size:clamp(19px,2vw,24px);}
 .header-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;gap:24px;min-height:88px;}
 .brand{display:flex;align-items:center;gap:16px;font-family:var(--font-display);font-weight:600;font-size:20px;}
 .brand .logo-badge{
-  flex-shrink:0;width:68px;height:68px;border-radius:16px;background:var(--espresso);
-  display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(36,22,17,.3);
+  flex-shrink:0;width:68px;height:68px;border-radius:16px;
+  background:linear-gradient(150deg,var(--espresso) 50%,var(--signal-blue-deep) 145%);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(36,22,17,.32), 0 0 0 5px rgba(46,110,142,.16);
 }
 .brand .logo-badge img{height:42px;width:auto;display:block;filter:brightness(0) invert(1);}
 .brand .brand-word{display:flex;flex-direction:column;line-height:1.1;white-space:nowrap;}
 .brand .brand-word b{font-size:26px;font-weight:700;letter-spacing:-.01em;color:var(--espresso);white-space:nowrap;}
-.brand .brand-word span{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;color:var(--bronze-deep);text-transform:uppercase;margin-top:4px;font-weight:600;white-space:nowrap;}
+.brand .brand-word span{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;color:var(--signal-blue);text-transform:uppercase;margin-top:4px;font-weight:600;white-space:nowrap;}
 .main-nav{display:flex;align-items:center;gap:26px;}
 .main-nav a{font-size:14.5px;font-weight:500;color:var(--coffee-soft);transition:color .15s;position:relative;}
 .main-nav a:hover, .main-nav a.active{color:var(--bronze-deep);}
@@ -133,6 +143,13 @@ h3{font-size:clamp(19px,2vw,24px);}
 
 /* ---- hero ---- */
 .hero{position:relative;overflow:hidden;padding:76px 0 90px;}
+.hero-bg-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.14;z-index:0;filter:saturate(.8) contrast(1.05);}
+.hero-bg-overlay{
+  position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg, var(--parchment) 0%, rgba(250,245,236,.75) 45%, var(--parchment) 100%);
+}
+.hero-bg-label{position:absolute;top:18px;left:50%;transform:translateX(-50%);z-index:2;}
+.hero > .container{position:relative;z-index:3;}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;}
 .hero-copy .btn-row{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
 .hero-visual{position:relative;}
@@ -457,9 +474,16 @@ section{padding:96px 0;}
 
 /* ---- bottom CTA banner ---- */
 .cta-banner{
-  background:linear-gradient(120deg,var(--espresso),var(--coffee));border-radius:var(--radius-lg);
-  padding:56px 48px;text-align:center;color:#fff;
+  position:relative;overflow:hidden;background:linear-gradient(120deg,var(--espresso),var(--coffee));
+  border-radius:var(--radius-lg);padding:56px 48px;text-align:center;color:#fff;
 }
+.cta-banner-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22;z-index:0;}
+.cta-banner::before{
+  content:"";position:absolute;inset:0;z-index:1;
+  background:linear-gradient(120deg,rgba(36,22,17,.88),rgba(62,42,30,.82));
+}
+.cta-banner-label{position:absolute;top:14px;left:50%;transform:translateX(-50%);z-index:2;}
+.cta-banner-inner{position:relative;z-index:3;}
 .cta-banner h2{color:#fff;}
 .cta-banner p{color:#D9C8AF;max-width:520px;margin:0 auto 28px;}
 

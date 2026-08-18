@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>TEPIA GROUP — Guides for Working Abroad</title>
-<meta name="description" content="Practical guides on work permits, visas and legal employment abroad from TEPIA GROUP." />
+<title>TEPIA GROUP — Verified Job Vacancies Abroad</title>
+<meta name="description" content="Current verified vacancies in Poland, Germany and across the EU — with legal contracts and work permit support." />
 <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
 <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon-180.png" />
@@ -23,8 +23,8 @@
       <a href="index.html#hero" data-i18n="nav.home">Home</a>
       <a href="about.html" data-i18n="nav.about">About</a>
       <a href="index.html#industries" data-i18n="nav.industries">Destinations</a>
-      <a href="vacancies.html" data-i18n="nav.searches">Vacancies</a>
-      <a href="blog.html" class="active" data-i18n="nav.blog">Guides</a>
+      <a href="vacancies.html" class="active" data-i18n="nav.searches">Vacancies</a>
+      <a href="blog.html" data-i18n="nav.blog">Guides</a>
       <a href="for-employers.html" data-i18n="nav.employers">For Employers</a>
       <a href="contacts.html" data-i18n="nav.contact">Contact</a>
     </nav>
@@ -54,37 +54,76 @@
 
 <section class="mini-hero">
   <div class="container">
-    <div class="eyebrow" data-i18n="blogPage.eyebrow">Guides</div>
-    <h1 data-i18n="blogPage.title">Practical guides before you go</h1>
+    <div class="eyebrow" data-i18n="vacPage.eyebrow">Vacancies</div>
+    <h1 data-i18n="vacPage.title">Current verified vacancies</h1>
   </div>
 </section>
 
 <section>
-  <div class="container grid-3">
-    <a class="blog-card" href="blog-article.html?slug=polish-work-permit-2026">
-      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1454496406107-dc34337da8d6?w=700&q=75&auto=format&fit=crop" alt="Passport and documents" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
-      <div class="blog-body">
-        <div class="blog-date" data-i18n="blogPage.a1_date">March 2026</div>
-        <h3 data-i18n="blogPage.a1_t">How to get a Polish work permit in 2026</h3>
-        <p data-i18n="blogPage.a1_e">The paperwork checklist, typical processing time and the most common mistakes to avoid.</p>
+  <div class="container catalog-layout">
+    <aside class="filter-sidebar">
+      <input type="text" id="vacSearch" class="filter-search-input" data-i18n-placeholder="vacPage.search_ph" placeholder="Search by title or keyword" />
+      <div class="filter-group">
+        <h4 data-i18n="vacPage.filterCountry">Country</h4>
+        <label class="filter-checkbox"><input type="checkbox" value="Poland" checked> <span data-i18n="industries.i1_title">Poland</span></label>
+        <label class="filter-checkbox"><input type="checkbox" value="Germany" checked> <span data-i18n="industries.i2_title">Germany</span></label>
+        <label class="filter-checkbox"><input type="checkbox" value="Netherlands" checked> <span data-i18n="industries.i3_title">Netherlands</span></label>
+        <label class="filter-checkbox"><input type="checkbox" value="Czechia" checked> <span data-i18n="industries.i4_title">Czechia</span></label>
+        <label class="filter-checkbox"><input type="checkbox" value="Lithuania" checked> <span data-i18n="industries.i5_title">Lithuania</span></label>
+        <label class="filter-checkbox"><input type="checkbox" value="Slovakia" checked> <span data-i18n="industries.i6_title">Slovakia</span></label>
       </div>
-    </a>
-    <a class="blog-card" href="blog-article.html?slug=job-offer-questions">
-      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1758518730384-be3d205838e8?w=700&q=75&auto=format&fit=crop" alt="Job interview handshake" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
-      <div class="blog-body">
-        <div class="blog-date" data-i18n="blogPage.a2_date">February 2026</div>
-        <h3 data-i18n="blogPage.a2_t">Ten questions to ask before accepting a job offer abroad</h3>
-        <p data-i18n="blogPage.a2_e">How to spot a legitimate contract before you sign anything.</p>
+      <div class="filter-group">
+        <h4 data-i18n="vacPage.filterGender">Gender</h4>
+        <label class="filter-checkbox"><input type="radio" name="vacGender" value="any" checked> <span data-i18n="vacPage.genderAny">Any</span></label>
+        <label class="filter-checkbox"><input type="radio" name="vacGender" value="male"> <span data-i18n="vacPage.genderMale">Male</span></label>
+        <label class="filter-checkbox"><input type="radio" name="vacGender" value="female"> <span data-i18n="vacPage.genderFemale">Female</span></label>
       </div>
-    </a>
-    <a class="blog-card" href="blog-article.html?slug=germany-vs-netherlands">
-      <div class="blog-thumb"><img src="https://images.unsplash.com/photo-1748608684523-afa687945f5d?w=700&q=75&auto=format&fit=crop" alt="Warsaw Poland skyline" loading="lazy" style="width:100%;height:100%;object-fit:cover;"></div>
-      <div class="blog-body">
-        <div class="blog-date" data-i18n="blogPage.a3_date">January 2026</div>
-        <h3 data-i18n="blogPage.a3_t">Germany vs Netherlands: comparing net pay and living costs</h3>
-        <p data-i18n="blogPage.a3_e">A side-by-side look at what actually lands in your bank account each month.</p>
+      <div class="filter-group">
+        <label class="filter-checkbox"><input type="checkbox" id="vacHotOnly"> <span data-i18n="vacPage.hot">Urgent</span></label>
+        <label class="filter-checkbox"><input type="checkbox" id="vacHousingOnly"> <span data-i18n="vacPage.filterHousing">Housing provided</span></label>
       </div>
-    </a>
+      <button type="button" class="filter-clear" id="vacFilterClear" data-i18n="vacPage.clearFilters">Reset filters</button>
+    </aside>
+
+    <div>
+      <div class="results-count" id="vacResultsCount">12 vacancies found</div>
+      <div class="cat-vac-grid" id="vacCatalogGrid"></div>
+      <div class="no-results" id="vacNoResults" style="display:none;">
+        <p data-i18n="vacPage.noResults">No vacancies match these filters. Try widening your search.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<template id="vacCardTemplate">
+  <div class="cat-vac-card">
+    <div class="hotvac-photo">
+      <span class="hotvac-flame" style="display:none;">🔥 <span data-i18n="vacPage.hot">Urgent</span></span>
+      <img loading="lazy">
+    </div>
+    <div class="hotvac-body">
+      <h3></h3>
+      <div class="meta-icon-row">
+        <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.4"/></svg><span class="m-loc"></span></div>
+        <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9.5c0-1.4 1.3-2.5 3-2.5s3 1.1 3 2.5-1.3 2-3 2.5c-1.7.5-3 1.1-3 2.5s1.3 2.5 3 2.5 3-1.1 3-2.5"/></svg><span class="m-salary"></span></div>
+        <div class="meta-icon-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11 12 4l9 7"/><path d="M5 10v10h14V10"/></svg><span class="m-housing"></span></div>
+      </div>
+      <a class="btn btn-outline btn-sm" style="align-self:flex-start;" data-i18n="vacPage.apply">View &amp; apply</a>
+    </div>
+  </div>
+</template>
+
+<section class="section-alt">
+  <div class="container" style="max-width:640px;text-align:center;">
+    <h2 data-i18n="vacPage.subs_title">Get new vacancies by email</h2>
+    <p class="lede" style="margin:0 auto 24px;" data-i18n="vacPage.subs_text">One email whenever a new verified vacancy opens in your country of interest.</p>
+    <form data-lead-form style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <input type="email" name="email" data-required style="max-width:320px;border:1px solid var(--line);border-radius:999px;padding:12px 18px;font-family:var(--font-body);" data-i18n-placeholder="formSection.email" />
+      <button type="submit" class="btn btn-primary">
+        <span class="btn-label" data-i18n="vacPage.subs_btn">Subscribe</span>
+        <span class="spinner"></span>
+      </button>
+    </form>
   </div>
 </section>
 
@@ -161,5 +200,6 @@
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/app.js"></script>
 <script src="assets/js/image-labels.js"></script>
+<script src="assets/js/catalog.js"></script>
 </body>
 </html>
