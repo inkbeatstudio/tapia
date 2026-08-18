@@ -1,20 +1,39 @@
-/* ============================================================
-   TEPIA GROUP — shared front-end behaviour
-   ============================================================ */
 (function () {
   "use strict";
 
-  // ---- mobile nav ----
   const burger = document.querySelector(".burger");
   const mobileNav = document.querySelector(".mobile-nav");
-  if (burger && mobileNav) {
-    burger.addEventListener("click", () => mobileNav.classList.toggle("open"));
-    mobileNav.querySelectorAll("a").forEach((a) =>
-      a.addEventListener("click", () => mobileNav.classList.remove("open"))
-    );
+  const mobileNavClose = document.querySelector(".mobile-nav-close");
+
+  function openMobileNav() {
+    if (!mobileNav) return;
+    mobileNav.classList.add("open");
+    if (burger) burger.classList.add("is-active");
+    document.body.style.overflow = "hidden";
+  }
+  function closeMobileNav() {
+    if (!mobileNav) return;
+    mobileNav.classList.remove("open");
+    if (burger) burger.classList.remove("is-active");
+    document.body.style.overflow = "";
   }
 
-  // ---- language dropdown ----
+  if (burger && mobileNav) {
+    burger.addEventListener("click", () => {
+      mobileNav.classList.contains("open") ? closeMobileNav() : openMobileNav();
+    });
+    mobileNav.querySelectorAll("a").forEach((a) =>
+      a.addEventListener("click", closeMobileNav)
+    );
+    if (mobileNavClose) mobileNavClose.addEventListener("click", closeMobileNav);
+    mobileNav.addEventListener("click", (e) => {
+      if (e.target === mobileNav) closeMobileNav();
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && mobileNav.classList.contains("open")) closeMobileNav();
+    });
+  }
+
   document.querySelectorAll(".lang-switch").forEach((wrap) => {
     const btn = wrap.querySelector(".lang-btn");
     const menu = wrap.querySelector(".lang-menu");
@@ -28,7 +47,6 @@
     document.querySelectorAll(".lang-menu.open").forEach((m) => m.classList.remove("open"));
   });
 
-  // ---- FAQ accordion ----
   document.querySelectorAll(".faq-item").forEach((item) => {
     const q = item.querySelector(".faq-q");
     const a = item.querySelector(".faq-a");
@@ -46,7 +64,6 @@
     });
   });
 
-  // ---- cookie consent ----
   const cookieBanner = document.querySelector(".cookie-banner");
   if (cookieBanner) {
     const decided = localStorage.getItem("tepia_cookie_consent");
@@ -59,7 +76,6 @@
     });
   }
 
-  // ---- floating messenger panel ----
   const msgFab = document.querySelector(".float-messenger .fab");
   const msgPanel = document.querySelector(".messenger-panel");
   if (msgFab && msgPanel) {
@@ -70,7 +86,6 @@
     document.addEventListener("click", () => msgPanel.classList.remove("open"));
   }
 
-  // ---- back to top ----
   const topFab = document.querySelector(".float-top .fab");
   window.addEventListener("scroll", () => {
     const show = window.scrollY > 500;
@@ -83,7 +98,6 @@
     setTimeout(() => { if (msgFab) msgFab.classList.add("show"); }, 300);
   }
 
-  // ---- sticky header active link on scroll (light touch) ----
   const sections = document.querySelectorAll("main [id]");
   const navLinks = document.querySelectorAll(".main-nav a[href^='#']");
   if (sections.length && navLinks.length) {
@@ -98,7 +112,6 @@
     });
   }
 
-  // ---- phone country code dropdown + digits-only input with per-country length limit ----
   document.querySelectorAll(".phone-field").forEach((field) => {
     const select = field.querySelector(".phone-cc-select");
     const input = field.querySelector("input");
@@ -110,25 +123,21 @@
       input.setAttribute("maxlength", max);
       input.setAttribute("inputmode", "numeric");
       input.setAttribute("pattern", "[0-9]*");
-      // trim any existing value down to the new country's max length
       if (input.value.length > max) input.value = input.value.slice(0, max);
     };
     applyMax();
     select.addEventListener("change", applyMax);
 
-    // strip anything that isn't a digit as the person types, live
     input.addEventListener("input", () => {
       const max = Number(select.options[select.selectedIndex].dataset.max) || 15;
       const digitsOnly = input.value.replace(/\D/g, "").slice(0, max);
       if (digitsOnly !== input.value) input.value = digitsOnly;
     });
-    // block obviously non-numeric key presses (still allows paste, backspace, arrows, etc.)
     input.addEventListener("keypress", (e) => {
       if (e.key.length === 1 && !/[0-9]/.test(e.key)) e.preventDefault();
     });
   });
 
-  // ---- multi-step quiz widget (hero) ----
   document.querySelectorAll(".quiz-card[data-quiz]").forEach((card) => {
     const steps = Array.from(card.querySelectorAll(".quiz-step"));
     const dots = Array.from(card.querySelectorAll(".quiz-dots span"));
@@ -180,14 +189,12 @@
         answers.name = form.querySelector('[name="name"]')?.value;
         answers.phone = form.querySelector('[name="phone"]')?.value;
         answers.email = form.querySelector('[name="email"]')?.value;
-        // Placeholder for real API call (POST /api/leads with quiz answers).
         setTimeout(() => { window.location.href = "thank-you.html"; }, 700);
       });
     }
     render();
   });
 
-  // ---- generic form handling: validation + fake-submit -> thank-you ----
   document.querySelectorAll("form[data-lead-form]").forEach((form) => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -224,7 +231,6 @@
       const submitBtn = form.querySelector('button[type="submit"]');
       if (submitBtn) submitBtn.classList.add("is-loading");
 
-      // Placeholder for real API call (POST /api/leads) — wired once backend is deployed.
       setTimeout(() => {
         window.location.href = "thank-you.html";
       }, 700);

@@ -1,10 +1,3 @@
-/* ============================================================
-   TEPIA GROUP — i18n engine
-   Static-first pattern: page ships with EN text in the DOM,
-   JS swaps text on load based on saved/browser language and
-   on manual switch.
-   ============================================================ */
-
 (function () {
   const LANGS = [
     { code: "en", label: "English", short: "EN" },

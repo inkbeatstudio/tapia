@@ -325,7 +325,6 @@
 </head>
 <body>
 
-<!-- ============ LOGIN ============ -->
 <div id="loginScreen">
   <div class="login-card">
     <div class="lang-dropdown" id="langDropdownLogin" style="position:absolute;top:20px;right:20px;">
@@ -338,6 +337,8 @@
         <button class="lang-option" data-lang="de" role="menuitem">🇩🇪 Deutsch<span class="code">DE</span></button>
         <button class="lang-option" data-lang="ro" role="menuitem">🇷🇴 Română<span class="code">RO</span></button>
         <button class="lang-option" data-lang="ru" role="menuitem">🇷🇺 Русский<span class="code">RU</span></button>
+        <button class="lang-option" data-lang="uk" role="menuitem">🇺🇦 Українська<span class="code">UK</span></button>
+        <button class="lang-option" data-lang="pl" role="menuitem">🇵🇱 Polski<span class="code">PL</span></button>
       </div>
     </div>
     <div class="login-logo"><img src="logo-icon.png" alt="TEPIA GROUP" class="site-logo-img"></div>
@@ -370,7 +371,6 @@
   </div>
 </div>
 
-<!-- ============ APP ============ -->
 <div id="app">
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
   <aside class="sidebar" id="sidebar">
@@ -423,6 +423,8 @@
             <button class="lang-option" data-lang="de" role="menuitem">🇩🇪 Deutsch<span class="code">DE</span></button>
             <button class="lang-option" data-lang="ro" role="menuitem">🇷🇴 Română<span class="code">RO</span></button>
             <button class="lang-option" data-lang="ru" role="menuitem">🇷🇺 Русский<span class="code">RU</span></button>
+        <button class="lang-option" data-lang="uk" role="menuitem">🇺🇦 Українська<span class="code">UK</span></button>
+        <button class="lang-option" data-lang="pl" role="menuitem">🇵🇱 Polski<span class="code">PL</span></button>
           </div>
         </div>
         <div class="notif-dropdown" id="notifDropdown">
@@ -437,7 +439,6 @@
 
     <div class="content">
 
-      <!-- DASHBOARD -->
       <div class="view active" id="view-dashboard">
         <div class="stat-cards">
           <div class="stat-card"><div class="top-row"><div class="ic">📥</div></div><b id="dashNewLeads">—</b><span data-i18n="dash.s1">New leads today</span></div>
@@ -463,7 +464,6 @@
         </div>
       </div>
 
-      <!-- LEADS / CRM -->
       <div class="view" id="view-leads">
         <div class="toolbar">
           <div class="filters" id="leadsFilters">
@@ -482,7 +482,6 @@
         </div>
       </div>
 
-      <!-- VACANCIES -->
       <div class="view" id="view-vacancies">
         <div class="toolbar">
           <div class="filters" id="vacFilters">
@@ -501,7 +500,6 @@
         </div>
       </div>
 
-      <!-- COUNTRIES -->
       <div class="view" id="view-countries">
         <div class="toolbar">
           <div class="filters" id="countryLangTabs">
@@ -520,7 +518,6 @@
         </div>
       </div>
 
-      <!-- REVIEWS -->
       <div class="view" id="view-reviews">
         <div class="toolbar">
           <div></div>
@@ -529,7 +526,6 @@
         <div class="review-grid" id="reviewsGrid"></div>
       </div>
 
-      <!-- BLOG -->
       <div class="view" id="view-blog">
         <div class="toolbar">
           <div class="filters"><button class="fchip active" data-i18n="bl.all">All articles</button></div>
@@ -543,7 +539,6 @@
         </div>
       </div>
 
-      <!-- MEDIA -->
       <div class="view" id="view-media">
         <div class="toolbar">
           <div class="fsearch" style="max-width:280px;"><input id="mediaSearch" type="text" data-i18n-placeholder="media.searchPh" placeholder="Search by file name…"></div>
@@ -566,7 +561,6 @@
         </div>
       </div>
 
-      <!-- USERS -->
       <div class="view" id="view-users">
         <div class="panel">
           <div class="panel-head"><h3 data-i18n="usr.title">Admin panel users</h3><button class="btn btn-primary" style="width:auto;" onclick="openUserModal(null)" data-i18n="usr.invite">+ Invite</button></div>
@@ -574,7 +568,6 @@
         </div>
       </div>
 
-      <!-- SETTINGS -->
       <div class="view" id="view-offices">
         <div class="toolbar">
           <div class="filters" id="officeLangTabs">
@@ -783,7 +776,6 @@
   </div>
 </div>
 
-<!-- LEAD MODAL -->
 <div class="modal-overlay" id="leadModal">
   <div class="modal">
     <div class="modal-head"><h3 id="leadModalTitle" data-i18n="modal.leadTitle">Lead — Julia Koval</h3><button class="modal-close" onclick="closeModal('leadModal')">✕</button></div>
@@ -824,7 +816,6 @@
   </div>
 </div>
 
-<!-- VACANCY MODAL -->
 <div class="modal-overlay" id="vacancyModal">
   <div class="modal">
     <div class="modal-head"><h3 id="vacancyModalTitle" data-i18n="modal.vacTitleNew">New vacancy</h3><button class="modal-close" onclick="closeModal('vacancyModal')">✕</button></div>
@@ -845,6 +836,7 @@
       <div style="margin-top:20px;border-top:1px solid var(--line);padding-top:16px;">
         <div class="lang-tab-strip" id="vacLangTabStrip">
           <button type="button" class="lang-tab-btn active" data-lang="en">🇬🇧 EN</button>
+          <button type="button" class="lang-tab-btn" data-lang="pl">🇵🇱 PL</button>
           <button type="button" class="lang-tab-btn" data-lang="de">🇩🇪 DE</button>
           <button type="button" class="lang-tab-btn" data-lang="ro">🇷🇴 RO</button>
           <button type="button" class="lang-tab-btn" data-lang="ru">🇷🇺 RU</button>
@@ -856,6 +848,11 @@
             <div class="field2" style="margin-bottom:12px;"><label class="req" data-i18n="modal.vacName">Vacancy title</label><input class="vacTitle" id="vacTitleEn" placeholder="Warehouse Packer at Zalando"></div>
             <div class="field2" style="margin-bottom:12px;"><label data-i18n="modal.description">Description</label><textarea class="vacDescription" placeholder="Order picking and packing at a modern Zalando logistics warehouse in Berlin."></textarea></div>
             <div class="field2"><label data-i18n="modal.requirements">Requirements (one per line)</label><textarea class="vacRequirements" placeholder="Age 20 to 50&#10;Willingness to do physical work&#10;Biometric passport"></textarea></div>
+          </div>
+          <div class="lang-tab-panel" data-lang-panel="pl">
+            <div class="field2" style="margin-bottom:12px;"><label data-i18n="modal.vacName">Vacancy title</label><input class="vacTitle" placeholder="Pakowacz magazynowy w Zalando"></div>
+            <div class="field2" style="margin-bottom:12px;"><label data-i18n="modal.description">Description</label><textarea class="vacDescription"></textarea></div>
+            <div class="field2"><label data-i18n="modal.requirements">Requirements (one per line)</label><textarea class="vacRequirements"></textarea></div>
           </div>
           <div class="lang-tab-panel" data-lang-panel="de">
             <div class="field2" style="margin-bottom:12px;"><label data-i18n="modal.vacName">Vacancy title</label><input class="vacTitle" placeholder="Lagerpacker bei Zalando"></div>
@@ -917,13 +914,13 @@
   </div>
 </div>
 
-<!-- COUNTRY MODAL -->
 <div class="modal-overlay" id="countryModal">
   <div class="modal">
     <div class="modal-head"><h3 id="countryModalTitle" data-i18n="ctry.modalNew">New country</h3><button class="modal-close" onclick="closeModal('countryModal')">✕</button></div>
     <div class="modal-body">
       <div class="lang-tab-strip" id="ctryLangTabStrip">
         <button type="button" class="lang-tab-btn active" data-lang="en">🇬🇧 EN</button>
+          <button type="button" class="lang-tab-btn" data-lang="pl">🇵🇱 PL</button>
         <button type="button" class="lang-tab-btn" data-lang="de">🇩🇪 DE</button>
         <button type="button" class="lang-tab-btn" data-lang="ro">🇷🇴 RO</button>
         <button type="button" class="lang-tab-btn" data-lang="ru">🇷🇺 RU</button>
@@ -933,6 +930,9 @@
       <div id="ctryLangPanels" style="margin-bottom:16px;">
         <div class="lang-tab-panel active" data-lang-panel="en">
           <div class="field2"><label class="req" data-i18n="ctry.name">Name</label><input class="ctryName" id="ctryNameEn" placeholder="Poland"></div>
+        </div>
+        <div class="lang-tab-panel" data-lang-panel="pl">
+          <div class="field2"><label data-i18n="ctry.name">Name</label><input class="ctryName" placeholder="Polska"></div>
         </div>
         <div class="lang-tab-panel" data-lang-panel="de">
           <div class="field2"><label data-i18n="ctry.name">Name</label><input class="ctryName" placeholder="Polen"></div>
@@ -977,7 +977,6 @@
   </div>
 </div>
 
-<!-- REVIEW MODAL -->
 <div class="modal-overlay" id="reviewModal">
   <div class="modal">
     <div class="modal-head"><h3 data-i18n="rev.modalTitle">Add review</h3><button class="modal-close" onclick="closeModal('reviewModal')">✕</button></div>
@@ -1005,7 +1004,6 @@
   </div>
 </div>
 
-<!-- ARTICLE MODAL -->
 <div class="modal-overlay" id="articleModal">
   <div class="modal">
     <div class="modal-head"><h3 id="articleModalTitle" data-i18n="bl.modalNew">New article</h3><button class="modal-close" onclick="closeModal('articleModal')">✕</button></div>
@@ -1018,6 +1016,7 @@
       <div style="margin-top:20px;border-top:1px solid var(--line);padding-top:16px;">
         <div class="lang-tab-strip" id="artLangTabStrip">
           <button type="button" class="lang-tab-btn active" data-lang="en">🇬🇧 EN</button>
+          <button type="button" class="lang-tab-btn" data-lang="pl">🇵🇱 PL</button>
           <button type="button" class="lang-tab-btn" data-lang="de">🇩🇪 DE</button>
           <button type="button" class="lang-tab-btn" data-lang="ro">🇷🇴 RO</button>
           <button type="button" class="lang-tab-btn" data-lang="ru">🇷🇺 RU</button>
@@ -1029,6 +1028,11 @@
             <div class="field2" style="margin-bottom:12px;"><label class="req" data-i18n="th.title">Title</label><input class="artTitle" id="artTitleEn" placeholder="Poland simplifies Karta Pobytu renewal…"></div>
             <div class="field2" style="margin-bottom:12px;"><label data-i18n="bl.excerpt">Excerpt</label><textarea class="artExcerpt" placeholder="Short summary shown on the blog listing…" style="min-height:60px;"></textarea></div>
             <div class="field2"><label data-i18n="bl.body">Body</label><textarea class="artBody" placeholder="Full article text…" style="min-height:160px;"></textarea></div>
+          </div>
+          <div class="lang-tab-panel" data-lang-panel="pl">
+            <div class="field2" style="margin-bottom:12px;"><label data-i18n="th.title">Title</label><input class="artTitle" placeholder="Polska upraszcza przedłużenie Karty Pobytu…"></div>
+            <div class="field2" style="margin-bottom:12px;"><label data-i18n="bl.excerpt">Excerpt</label><textarea class="artExcerpt" style="min-height:60px;"></textarea></div>
+            <div class="field2"><label data-i18n="bl.body">Body</label><textarea class="artBody" style="min-height:160px;"></textarea></div>
           </div>
           <div class="lang-tab-panel" data-lang-panel="de">
             <div class="field2" style="margin-bottom:12px;"><label data-i18n="th.title">Title</label><input class="artTitle" placeholder="Polen vereinfacht Karta-Pobytu-Verlängerung…"></div>
@@ -1075,7 +1079,6 @@
   </div>
 </div>
 
-<!-- USER MODAL -->
 <div class="modal-overlay" id="userModal">
   <div class="modal">
     <div class="modal-head"><h3 id="userModalTitle" data-i18n="usr.modalNew">New user</h3><button class="modal-close" onclick="closeModal('userModal')">✕</button></div>
@@ -1111,6 +1114,7 @@
     <div class="modal-body">
       <div class="lang-tab-strip" id="offLangTabStrip">
         <button type="button" class="lang-tab-btn active" data-lang="en">🇬🇧 EN</button>
+          <button type="button" class="lang-tab-btn" data-lang="pl">🇵🇱 PL</button>
         <button type="button" class="lang-tab-btn" data-lang="de">🇩🇪 DE</button>
         <button type="button" class="lang-tab-btn" data-lang="ro">🇷🇴 RO</button>
         <button type="button" class="lang-tab-btn" data-lang="ru">🇷🇺 RU</button>
@@ -1123,6 +1127,13 @@
             <div class="field2"><label class="req" data-i18n="off.city">City</label><input class="offCity" id="offCityEn" placeholder="Kyiv"></div>
             <div class="field2"><label data-i18n="off.address">Address</label><input class="offAddress" placeholder="Khreshchatyk St., __, office __"></div>
             <div class="field2"><label data-i18n="off.hours">Hours</label><input class="offHours" placeholder="Mon–Fri, 9:00–19:00"></div>
+          </div>
+        </div>
+        <div class="lang-tab-panel" data-lang-panel="pl">
+          <div class="form-grid">
+            <div class="field2"><label data-i18n="off.city">City</label><input class="offCity" placeholder="Warszawa"></div>
+            <div class="field2"><label data-i18n="off.address">Address</label><input class="offAddress"></div>
+            <div class="field2"><label data-i18n="off.hours">Hours</label><input class="offHours"></div>
           </div>
         </div>
         <div class="lang-tab-panel" data-lang-panel="de">
@@ -1202,6 +1213,7 @@
       </div>
       <div class="lang-tab-strip" id="stpLangTabStrip" style="margin-top:16px;">
         <button type="button" class="lang-tab-btn active" data-lang="en">🇬🇧 EN</button>
+          <button type="button" class="lang-tab-btn" data-lang="pl">🇵🇱 PL</button>
         <button type="button" class="lang-tab-btn" data-lang="de">🇩🇪 DE</button>
         <button type="button" class="lang-tab-btn" data-lang="ro">🇷🇴 RO</button>
         <button type="button" class="lang-tab-btn" data-lang="ru">🇷🇺 RU</button>
@@ -1213,6 +1225,11 @@
           <div class="field2" style="margin-bottom:12px;"><label class="req" data-i18n="th.title">Title</label><input class="stpTitle" id="stpTitleEn" placeholder="Consultation"></div>
           <div class="field2" style="margin-bottom:12px;"><label data-i18n="modal.description">Description</label><textarea class="stpDescription" placeholder="We discuss your experience and preferences…"></textarea></div>
           <div class="field2"><label data-i18n="stp.duration">Duration label</label><input class="stpDuration" placeholder="1 day"></div>
+        </div>
+        <div class="lang-tab-panel" data-lang-panel="pl">
+          <div class="field2" style="margin-bottom:12px;"><label data-i18n="th.title">Title</label><input class="stpTitle"></div>
+          <div class="field2" style="margin-bottom:12px;"><label data-i18n="modal.description">Description</label><textarea class="stpDescription"></textarea></div>
+          <div class="field2"><label data-i18n="stp.duration">Duration label</label><input class="stpDuration"></div>
         </div>
         <div class="lang-tab-panel" data-lang-panel="de">
           <div class="field2" style="margin-bottom:12px;"><label data-i18n="th.title">Title</label><input class="stpTitle"></div>
@@ -1254,6 +1271,7 @@
       </div>
       <div class="lang-tab-strip" id="teamLangTabStrip" style="margin-top:16px;">
         <button type="button" class="lang-tab-btn active" data-lang="en">🇬🇧 EN</button>
+          <button type="button" class="lang-tab-btn" data-lang="pl">🇵🇱 PL</button>
         <button type="button" class="lang-tab-btn" data-lang="de">🇩🇪 DE</button>
         <button type="button" class="lang-tab-btn" data-lang="ro">🇷🇴 RO</button>
         <button type="button" class="lang-tab-btn" data-lang="ru">🇷🇺 RU</button>
@@ -1266,6 +1284,12 @@
           <div class="field2" style="margin-bottom:12px;"><label data-i18n="team.position">Position</label><input class="teamPosition" placeholder="Head of Recruitment"></div>
           <div class="field2" style="margin-bottom:12px;"><label data-i18n="team.bio">Bio (short paragraph)</label><textarea class="teamBio" placeholder="With the company since 2018, coordinates onboarding for new candidates…"></textarea></div>
           <div class="field2"><label data-i18n="team.quote">Personal quote</label><textarea class="teamQuote" placeholder="I like that every day I get to help someone start a new chapter."></textarea></div>
+        </div>
+        <div class="lang-tab-panel" data-lang-panel="pl">
+          <div class="field2" style="margin-bottom:12px;"><label data-i18n="modal.name">Name</label><input class="teamName"></div>
+          <div class="field2" style="margin-bottom:12px;"><label data-i18n="team.position">Position</label><input class="teamPosition"></div>
+          <div class="field2" style="margin-bottom:12px;"><label data-i18n="team.bio">Bio (short paragraph)</label><textarea class="teamBio"></textarea></div>
+          <div class="field2"><label data-i18n="team.quote">Personal quote</label><textarea class="teamQuote"></textarea></div>
         </div>
         <div class="lang-tab-panel" data-lang-panel="de">
           <div class="field2" style="margin-bottom:12px;"><label data-i18n="modal.name">Name</label><input class="teamName"></div>
@@ -1333,6 +1357,7 @@
     <div class="modal-body">
       <div class="lang-tab-strip" id="licLangTabStrip">
         <button type="button" class="lang-tab-btn active" data-lang="en">🇬🇧 EN</button>
+          <button type="button" class="lang-tab-btn" data-lang="pl">🇵🇱 PL</button>
         <button type="button" class="lang-tab-btn" data-lang="de">🇩🇪 DE</button>
         <button type="button" class="lang-tab-btn" data-lang="ro">🇷🇴 RO</button>
         <button type="button" class="lang-tab-btn" data-lang="ru">🇷🇺 RU</button>
@@ -1343,6 +1368,10 @@
         <div class="lang-tab-panel active" data-lang-panel="en">
           <div class="field2" style="margin-bottom:12px;"><label class="req" data-i18n="th.title">Title</label><input class="licTitle" id="licTitleEn" placeholder="License of the Ministry..."></div>
           <div class="field2"><label data-i18n="modal.description">Description</label><textarea class="licDescription" placeholder="No.___ dated..."></textarea></div>
+        </div>
+        <div class="lang-tab-panel" data-lang-panel="pl">
+          <div class="field2" style="margin-bottom:12px;"><label data-i18n="th.title">Title</label><input class="licTitle"></div>
+          <div class="field2"><label data-i18n="modal.description">Description</label><textarea class="licDescription"></textarea></div>
         </div>
         <div class="lang-tab-panel" data-lang-panel="de">
           <div class="field2" style="margin-bottom:12px;"><label data-i18n="th.title">Title</label><input class="licTitle"></div>
@@ -1381,6 +1410,7 @@
     <div class="modal-body">
       <div class="lang-tab-strip" id="faqLangTabStrip">
         <button type="button" class="lang-tab-btn active" data-lang="en">🇬🇧 EN</button>
+          <button type="button" class="lang-tab-btn" data-lang="pl">🇵🇱 PL</button>
         <button type="button" class="lang-tab-btn" data-lang="de">🇩🇪 DE</button>
         <button type="button" class="lang-tab-btn" data-lang="ro">🇷🇴 RO</button>
         <button type="button" class="lang-tab-btn" data-lang="ru">🇷🇺 RU</button>
@@ -1391,6 +1421,10 @@
         <div class="lang-tab-panel active" data-lang-panel="en">
           <div class="field2" style="margin-bottom:12px;"><label class="req" data-i18n="faq.question">Question</label><input class="faqQuestion" id="faqQuestionEn" placeholder="How much does your service cost?"></div>
           <div class="field2"><label data-i18n="faq.answer">Answer</label><textarea class="faqAnswer" placeholder="Our service is free for candidates..."></textarea></div>
+        </div>
+        <div class="lang-tab-panel" data-lang-panel="pl">
+          <div class="field2" style="margin-bottom:12px;"><label data-i18n="faq.question">Question</label><input class="faqQuestion"></div>
+          <div class="field2"><label data-i18n="faq.answer">Answer</label><textarea class="faqAnswer"></textarea></div>
         </div>
         <div class="lang-tab-panel" data-lang-panel="de">
           <div class="field2" style="margin-bottom:12px;"><label data-i18n="faq.question">Question</label><input class="faqQuestion"></div>
@@ -1482,6 +1516,7 @@
 "ctry.add":"+ Add country","ctry.flag":"Flag","ctry.name":"Name","ctry.order":"Order","ctry.emoji":"Flag emoji","ctry.photo":"Flag photo","ctry.save":"Save country","ctry.modalNew":"New country","ctry.empty":"No countries for this language yet.",
 "rev.add":"+ Add review","rev.modalTitle":"Add review","rev.author":"Candidate name","rev.rating":"Rating (1\u20135)","rev.text":"Review text","rev.screenshots":"Screenshots","rev.save":"Save review","rev.empty":"Nothing here yet.","rev.noShots":"No screenshots",
 "bl.excerpt":"Excerpt","bl.body":"Body","bl.save":"Save article","bl.modalNew":"New article","bl.empty":"No articles yet.",
+"modal.region":"Region","modal.gender":"Gender","modal.genderAny":"Any","modal.genderMale":"Male","modal.genderFemale":"Female","modal.accommodation":"Housing cost","modal.bonuses":"Bonuses (one per line)",
       "burger.open":"Open menu","burger.close":"Close menu"
     },
     de: {
@@ -1542,6 +1577,7 @@
 "ctry.add":"+ Land hinzufügen","ctry.flag":"Flagge","ctry.name":"Name","ctry.order":"Reihenfolge","ctry.emoji":"Flaggen-Emoji","ctry.photo":"Flaggenfoto","ctry.save":"Land speichern","ctry.modalNew":"Neues Land","ctry.empty":"Noch keine Länder für diese Sprache.",
 "rev.add":"+ Bewertung hinzufügen","rev.modalTitle":"Bewertung hinzufügen","rev.author":"Name des Kandidaten","rev.rating":"Bewertung (1\u20135)","rev.text":"Bewertungstext","rev.screenshots":"Screenshots","rev.save":"Bewertung speichern","rev.empty":"Hier gibt es noch nichts.","rev.noShots":"Keine Screenshots",
 "bl.excerpt":"Auszug","bl.body":"Inhalt","bl.save":"Artikel speichern","bl.modalNew":"Neuer Artikel","bl.empty":"Noch keine Artikel.",
+"modal.region":"Region","modal.gender":"Geschlecht","modal.genderAny":"Beliebig","modal.genderMale":"Männlich","modal.genderFemale":"Weiblich","modal.accommodation":"Unterkunftskosten","modal.bonuses":"Boni (eine pro Zeile)",
       "burger.open":"Menü öffnen","burger.close":"Menü schließen"
     },
     ro: {
@@ -1602,6 +1638,7 @@
 "ctry.add":"+ Adaugă țară","ctry.flag":"Steag","ctry.name":"Nume","ctry.order":"Ordine","ctry.emoji":"Emoji steag","ctry.photo":"Fotografie steag","ctry.save":"Salvează țara","ctry.modalNew":"Țară nouă","ctry.empty":"Nicio țară pentru această limbă încă.",
 "rev.add":"+ Adaugă recenzie","rev.modalTitle":"Adaugă recenzie","rev.author":"Numele candidatului","rev.rating":"Evaluare (1\u20135)","rev.text":"Textul recenziei","rev.screenshots":"Capturi de ecran","rev.save":"Salvează recenzia","rev.empty":"Nimic aici încă.","rev.noShots":"Fără capturi",
 "bl.excerpt":"Rezumat","bl.body":"Conținut","bl.save":"Salvează articolul","bl.modalNew":"Articol nou","bl.empty":"Niciun articol încă.",
+"modal.region":"Regiune","modal.gender":"Gen","modal.genderAny":"Oricare","modal.genderMale":"Masculin","modal.genderFemale":"Feminin","modal.accommodation":"Cost cazare","modal.bonuses":"Bonusuri (câte unul pe linie)",
       "burger.open":"Deschide meniul","burger.close":"Închide meniul"
     },
     ru: {
@@ -1662,6 +1699,7 @@
 "ctry.add":"+ Добавить страну","ctry.flag":"Флаг","ctry.name":"Название","ctry.order":"Порядок","ctry.emoji":"Эмодзи флага","ctry.photo":"Фото флага","ctry.save":"Сохранить страну","ctry.modalNew":"Новая страна","ctry.empty":"Пока нет стран для этого языка.",
 "rev.add":"+ Добавить отзыв","rev.modalTitle":"Добавить отзыв","rev.author":"Имя кандидата","rev.rating":"Рейтинг (1\u20135)","rev.text":"Текст отзыва","rev.screenshots":"Скриншоты","rev.save":"Сохранить отзыв","rev.empty":"Здесь пока пусто.","rev.noShots":"Нет скриншотов",
 "bl.excerpt":"Краткое описание","bl.body":"Текст статьи","bl.save":"Сохранить статью","bl.modalNew":"Новая статья","bl.empty":"Пока нет статей.",
+"modal.region":"Регион","modal.gender":"Пол","modal.genderAny":"Любой","modal.genderMale":"Мужской","modal.genderFemale":"Женский","modal.accommodation":"Стоимость жилья","modal.bonuses":"Бонусы (по одному на строку)",
       "burger.open":"Открыть меню","burger.close":"Закрыть меню"
     },
     uk: {
@@ -1722,7 +1760,69 @@
 "ctry.add":"+ Додати країну","ctry.flag":"Прапор","ctry.name":"Назва","ctry.order":"Порядок","ctry.emoji":"Емодзі прапора","ctry.photo":"Фото прапора","ctry.save":"Зберегти країну","ctry.modalNew":"Нова країна","ctry.empty":"Поки немає країн для цієї мови.",
 "rev.add":"+ Додати відгук","rev.modalTitle":"Додати відгук","rev.author":"Ім'я клієнта","rev.rating":"Рейтинг (1\u20135)","rev.text":"Текст відгуку","rev.screenshots":"Скриншоти","rev.save":"Зберегти відгук","rev.empty":"Тут поки порожньо.","rev.noShots":"Немає скриншотів",
 "bl.excerpt":"Короткий опис","bl.body":"Текст статті","bl.save":"Зберегти статтю","bl.modalNew":"Нова стаття","bl.empty":"Поки немає статей.",
+"modal.region":"Регіон","modal.gender":"Стать","modal.genderAny":"Будь-яка","modal.genderMale":"Чоловіча","modal.genderFemale":"Жіноча","modal.accommodation":"Вартість житла","modal.bonuses":"Бонуси (по одному на рядок)",
       "burger.open":"Відкрити меню","burger.close":"Закрити меню"
+    },
+    pl: {
+      "meta.title":"Panel administracyjny — TEPIA GROUP",
+      "login.sub":"Panel zarządzania stroną","login.error":"Nieprawidłowy login lub hasło",
+      "login.emailLabel":"Email lub nazwa użytkownika","login.passLabel":"Hasło","login.remember":"Zapamiętaj mnie","login.forgot":"Nie pamiętasz hasła?","login.2faLabel":"6-cyfrowy kod z aplikacji uwierzytelniającej","login.2faSubmit":"Zweryfikuj i zaloguj się","login.2faBack":"Wstecz","tfa.title":"Uwierzytelnianie dwuskładnikowe","tfa.desc":"Dodaj dodatkową warstwę zabezpieczeń konta za pomocą aplikacji takiej jak Google Authenticator.","tfa.enable":"Włącz 2FA","tfa.disable":"Wyłącz 2FA","tfa.scanTitle":"Zeskanuj ten kod QR","tfa.scanText":"Otwórz Google Authenticator (lub podobną aplikację), zeskanuj poniższy kod, a następnie wpisz wyświetlony 6-cyfrowy kod.","tfa.codeLabel":"6-cyfrowy kod","tfa.confirm":"Potwierdź i włącz","tfa.enabled":"Uwierzytelnianie dwuskładnikowe jest włączone.","tfa.disabledStatus":"Uwierzytelnianie dwuskładnikowe nie jest włączone.","tfa.passwordLabel":"Potwierdź hasło, aby wyłączyć","tfa.disableConfirm":"Potwierdź wyłączenie","tfa.cancel":"Anuluj",
+      "login.submit":"Zaloguj się","login.note":"Dla roli „Administrator” po zalogowaniu wymagany będzie kod 2FA z Google Authenticator.<br>Podłącz ten formularz do /api/auth/login Twojego backendu.","login.demoLink":"Zobacz przykładowe dane (bez połączenia z backendem)",
+      "nav.dashboard":"Pulpit","nav.leads":"Zgłoszenia","nav.vacancies":"Oferty pracy","nav.countries":"Kraje","nav.reviews":"Opinie",
+      "nav.contentSection":"Treść","nav.blog":"Blog","nav.offices":"Biura","nav.steps":"Etapy wyjazdu","nav.team":"Zespół","nav.aboutContent":"Tekst „O nas”","nav.licenses":"Licencje i wyróżnienia","nav.faqs":"FAQ","nav.subscribers":"Subskrybenci","nav.pages":"Strony witryny","nav.media":"Pliki","subs.export":"Eksportuj CSV","subs.email":"Email","subs.lang":"Język","subs.country":"Filtr kraju","subs.total":"subskrybentów","subs.empty":"Brak subskrybentów.","faq.add":"+ Dodaj pytanie","faq.question":"Pytanie","faq.answer":"Odpowiedź","faq.save":"Zapisz","faq.modalNew":"Nowe pytanie","faq.empty":"Brak pytań.",
+      "nav.systemSection":"System","nav.users":"Użytkownicy","nav.settings":"Ustawienia","nav.about":"O nas","nav.contacts":"Kontakty",
+      "user.role":"Menedżer zgłoszeń","top.search":"Szukaj zgłoszeń, ofert pracy…",
+      "notif.title":"Powiadomienia","notif.clear":"Oznacz wszystkie jako przeczytane","notif.empty":"Brak powiadomień",
+      "notif.newLead":"Otrzymano nowe zgłoszenie","notif.justNow":"przed chwilą",
+      "dash.s1":"Nowe zgłoszenia dzisiaj","dash.s2":"Aktywne oferty pracy","dash.s3":"Łączna liczba kandydatów w bazie","dash.s4":"Konwersja zgłoszenie → wyjazd",
+      "dash.chartTitle":"Zgłoszenia w ciągu 7 dni","dash.allLeads":"Wszystkie zgłoszenia →","dash.recentLeads":"Ostatnie zgłoszenia","dash.all":"Wszystkie →",
+      "dash.r1":"Formularz konsultacji · 12:40","dash.r2":"Aplikacja · Pakowacz Zalando · 11:05","dash.r3":"Formularz partnerski · 09:22","dash.r4":"Aplikacja · DINO Polska · wczoraj",
+      "day.mon":"Pon","day.tue":"Wt","day.wed":"Śr","day.thu":"Czw","day.fri":"Pt","day.sat":"Sob","day.sun":"Nd",
+      "status.new":"Nowe","status.progress":"W trakcie","status.done":"Obsłużone","status.published":"Opublikowane","status.draft":"Szkic",
+      "filter.all":"Wszystkie","filter.processed":"Obsłużone","filter.published":"Opublikowane","filter.drafts":"Szkice","filter.hot":"Pilne",
+      "leads.addManual":"+ Dodaj ręcznie",
+      "th.candidate":"Kandydat","th.source":"Źródło","th.email":"Email","th.status":"Status","th.date":"Data",
+      "th.vacancy":"Oferta pracy","th.country":"Kraj","th.salary":"Wynagrodzenie","th.updated":"Zaktualizowano",
+      "th.title":"Tytuł","th.category":"Kategoria","th.author":"Autor",
+      "src.consult":"Formularz konsultacji","src.zalando":"Aplikacja · Pakowacz Zalando","src.partner":"Formularz partnerski","src.dino":"Aplikacja · DINO Polska","src.dhl":"Aplikacja · DHL Monachium",
+      "vac.add":"+ Dodaj ofertę pracy",
+      "time.h2":"2 godz. temu","time.yesterday":"wczoraj","time.today":"dzisiaj","time.d3":"3 dni temu","time.min2":"2 min temu","time.h1":"1 godz. temu",
+      "rev.pending":"Oczekuje na moderację","rev.rejected":"Odrzucone","rev.awaiting":"Oczekujące","rev.approve":"✓ Opublikuj","rev.reject":"✕ Odrzuć",
+      "rev.q1":"„Zakwaterowanie od razu, wypłata przelewana tego samego dnia za każdym razem. Opiekun był w kontakcie przez cały czas.”",
+      "rev.q2":"„Kartę pobytu załatwili w 3 tygodnie, nie musiałem się martwić — po prostu przysyłali mi dokumenty do podpisania.”",
+      "rev.q3":"„Wszystko zgodnie z umową. Jedyny minus — czekałem tydzień dłużej na wyjazd niż pierwotnie mówili.”",
+      "bl.all":"Wszystkie artykuły","bl.new":"+ Nowy artykuł","bl.catNews":"Aktualności","bl.catDocs":"Dokumenty",
+      "bl.a1":"Polska upraszcza przedłużenie Karty Pobytu…","bl.a2":"Jakie dokumenty są potrzebne do Niemiec w 2026","bl.a3":"Szkic: ubezpieczenie zdrowotne dla pracowników sezonowych",
+      "pg.title":"Kreator stron","pg.home":"Strona główna","pg.homeMeta":"9 bloków · edytowano 2 dni temu","pg.aboutMeta":"6 bloków · edytowano tydzień temu",
+      "pg.contactsMeta":"5 biur · edytowano wczoraj","pg.privacy":"Polityka prywatności","pg.privacyMeta":"1 blok",
+      "media.all":"Wszystkie pliki","media.images":"Obrazy","media.documents":"Dokumenty","media.upload":"Prześlij","media.searchPh":"Szukaj po nazwie pliku…","media.sortNewest":"Najpierw najnowsze","media.sortOldest":"Najpierw najstarsze","media.sortName":"Nazwa A-Z",
+      "usr.title":"Użytkownicy panelu","usr.invite":"+ Zaproś","usr.leadsManager":"Menedżer zgłoszeń","usr.contentManager":"Menedżer treści","usr.admin":"Administrator · 2FA wł.","usr.roleLabel":"Rola","usr.password":"Hasło","usr.passwordKeepPh":"Pozostaw puste, aby zachować obecne hasło","usr.active":"Konto aktywne","usr.inactive":"nieaktywne","usr.modalNew":"Nowy użytkownik","usr.save":"Zapisz użytkownika","usr.empty":"Brak użytkowników.",
+      "off.add":"+ Dodaj biuro","off.city":"Miasto","off.address":"Adres","off.phone":"Telefon","off.hours":"Godziny pracy","off.manager":"Imię i nazwisko opiekuna","off.photo":"Zdjęcie biura","off.isMain":"Biuro główne","off.main":"Główne","off.save":"Zapisz biuro","off.modalNew":"Nowe biuro","off.empty":"Brak biur.",
+      "off.visualType":"W bloku mapa/zdjęcie pokazuj","off.usePhoto":"Zdjęcie","off.useMap":"Mapy Google","off.mapHint":"W Mapach Google: znajdź lokalizację → Udostępnij → Umieść mapę → skopiuj URL z atrybutu src=\"...\" i wklej tutaj.",
+"lic.add":"+ Dodaj licencję/wyróżnienie","lic.icon":"Ikona (emoji)","lic.save":"Zapisz","lic.modalNew":"Nowa licencja/wyróżnienie","lic.empty":"Brak licencji lub wyróżnień.",
+"ab.statsTitle":"Statystyki strony głównej i strony O nas","ab.statYears":"Lat na rynku","ab.statClients":"Zadowolonych klientów","ab.statEmployers":"Zweryfikowanych pracodawców","ab.statCountries":"Krajów w Europie",
+"dash.s3total":"Łączna liczba zgłoszeń w bazie","dash.s4pending":"Opinii oczekujących na moderację",
+"stp.add":"+ Dodaj etap","stp.number":"Numer etapu","stp.duration":"Etykieta czasu trwania","stp.save":"Zapisz etap","stp.modalNew":"Nowy etap","stp.empty":"Brak etapów.",
+"team.add":"+ Dodaj członka zespołu","team.position":"Stanowisko","team.photo":"Zdjęcie","team.save":"Zapisz członka zespołu","team.modalNew":"Nowy członek zespołu","team.empty":"Brak członków zespołu.",
+"ab.editTitle":"Tekst strony O nas","ab.subtitle":"Podtytuł","ab.historyP1":"Historia — akapit 1","ab.historyP2":"Historia — akapit 2","ab.value1":"Wartość 1 — tytuł","ab.value1desc":"Wartość 1 — opis","ab.value2":"Wartość 2 — tytuł","ab.value2desc":"Wartość 2 — opis","ab.value3":"Wartość 3 — tytuł","ab.value3desc":"Wartość 3 — opis","ab.value4":"Wartość 4 — tytuł","ab.value4desc":"Wartość 4 — opis","ab.saveText":"Zapisz tekst O nas","ab.saved":"Zapisano.",
+"set.telegram":"Link do Telegramu","set.viber":"Link do Vibera","set.whatsapp":"Link do WhatsAppa","set.logo":"Logo strony","set.uploadLogo":"Prześlij nowe logo","set.social":"Media społecznościowe","set.addSocial":"+ Dodaj media społecznościowe","set.socialModalNew":"Nowe media społecznościowe","set.platform":"Nazwa platformy","set.icon":"Ikona (emoji)","set.url":"URL","set.saved":"Zapisano.","set.noSocial":"Brak mediów społecznościowych.","set.auditNote":"Szczegółowy dziennik aktywności jest zapisywany w bazie danych i może zostać wyeksportowany na żądanie.",
+"bl.cover":"Zdjęcie okładki","leads.empty":"Brak zgłoszeń.","src.manual":"Dodane ręcznie przez menedżera",
+      "set.contacts":"Kontakty strony","set.phone":"Telefon","set.email":"Email","set.notifyEmail":"Email do powiadomień o nowych zgłoszeniach",
+      "set.audit":"Dziennik aktywności","set.log1":"zmieniła status zgłoszenia Julii Koval","set.log2":"opublikował artykuł na blogu","set.log3":"dodał ofertę Zalando",
+      "modal.leadTitle":"Zgłoszenie — Julia Koval","modal.name":"Imię i nazwisko","modal.phone":"Telefon","modal.source":"Źródło",
+      "modal.comment":"Komentarz opiekuna","modal.commentPh":"Np.: oddzwoniłem, zaproponowałem ofertę w Berlinie, czekam na paszport do dalszego procesu...",
+      "modal.emailDelivered":"✉ Dostarczono emailem","modal.delivered":"Dostarczono ✓","modal.deliveryFailed":"Dostawa nieudana ✕","modal.attachment":"📎 Załączony plik","modal.viewFile":"Zobacz plik","modal.cancel":"Anuluj","modal.save":"Zapisz",
+      "modal.vacTitle":"Oferta — Pakowacz magazynowy w Zalando","modal.vacName":"Nazwa oferty","modal.employer":"Pracodawca","modal.city":"Miasto",
+      "modal.field":"Branża","modal.schedule":"Grafik","modal.salaryFrom":"Wynagrodzenie od","modal.currency":"Waluta",
+      "modal.description":"Opis","modal.requirements":"Wymagania (po jednym w wierszu)","modal.markHot":"Oznacz jako „pilna oferta”",
+      "modal.publish":"Opublikuj na stronie","modal.saveVac":"Zapisz ofertę","modal.vacTitleNew":"Nowa oferta","modal.language":"Język","modal.slug":"Adres URL (slug)","modal.requiredFields":"Wypełnij wymagane pola.","modal.langHint":"Podaj nazwę dla każdego języka obsługiwanego przez stronę. Zakładki z treścią są oznaczone kropką.","modal.langHintVac":"Tytuł, opis i wymagania są ustalane osobno dla każdego języka. Angielski jest wymagany, pozostałe języki są opcjonalne.","modal.langHintArt":"Tytuł, zajawka i treść są ustalane osobno dla każdego języka. Angielski jest wymagany, pozostałe języki są opcjonalne.","modal.requiredFieldsVac":"Wymagane: slug, kraj, miasto oraz tytuł w języku angielskim.","modal.requiredFieldsCtry":"Wymagane: slug i nazwa w języku angielskim.","modal.requiredFieldsArt":"Wymagane: slug i tytuł w języku angielskim.",
+"confirm.delete":"Usunąć ten wpis? Tej czynności nie można cofnąć.",
+"vac.empty":"Brak ofert pracy. Kliknij „+ Dodaj ofertę pracy”, aby utworzyć pierwszą.",
+"ctry.add":"+ Dodaj kraj","ctry.flag":"Flaga","ctry.name":"Nazwa","ctry.order":"Kolejność","ctry.emoji":"Emoji flagi","ctry.photo":"Zdjęcie flagi","ctry.save":"Zapisz kraj","ctry.modalNew":"Nowy kraj","ctry.empty":"Brak krajów dla tego języka.",
+"rev.add":"+ Dodaj opinię","rev.modalTitle":"Dodaj opinię","rev.author":"Imię kandydata","rev.rating":"Ocena (1–5)","rev.text":"Treść opinii","rev.screenshots":"Zrzuty ekranu","rev.save":"Zapisz opinię","rev.empty":"Jeszcze nic tu nie ma.","rev.noShots":"Brak zrzutów ekranu",
+"bl.excerpt":"Zajawka","bl.body":"Treść","bl.save":"Zapisz artykuł","bl.modalNew":"Nowy artykuł","bl.empty":"Brak artykułów.",
+"modal.region":"Region","modal.gender":"Płeć","modal.genderAny":"Dowolna","modal.genderMale":"Męska","modal.genderFemale":"Żeńska","modal.accommodation":"Koszt zakwaterowania","modal.bonuses":"Bonusy (po jednym w wierszu)",
+      "burger.open":"Otwórz menu","burger.close":"Zamknij menu"
     }
   };
 
@@ -2332,7 +2432,7 @@
 
   function renderVacancyRow(group, v){
     const tr = document.createElement('tr');
-    const langBadges = ['en','de','ro','ru','uk'].filter(l => group[l]).map(l => l.toUpperCase()).join(' · ');
+    const langBadges = ['en','pl','de','ro','ru','uk'].filter(l => group[l]).map(l => l.toUpperCase()).join(' · ');
     tr.innerHTML = `
       <td class="cell-name">${escapeHtml(v.title)}<br><span class="mono" style="font-size:10.5px;color:var(--ink-soft);">${langBadges}</span></td>
       <td>${escapeHtml(v.country)}${v.city ? ', ' + escapeHtml(v.city) : ''}</td>
@@ -2378,7 +2478,7 @@
     const vacPreview = document.getElementById('vacPhotoPreview');
     vacPreview.innerHTML = display?.photo_url ? `<img src="${mediaUrl(display.photo_url)}" style="width:64px;height:64px;object-fit:cover;border-radius:8px;">` : '';
 
-    ['en','de','ro','ru','uk'].forEach(lang=>{
+    ['en','pl','de','ro','ru','uk'].forEach(lang=>{
       const row = group ? group[lang] : null;
       const panel = document.querySelector(`#vacLangPanels [data-lang-panel="${lang}"]`);
       panel.querySelector('.vacTitle').value = row?.title || '';
@@ -2428,7 +2528,7 @@
     }
     try {
       const requests = [];
-      ['en','de','ro','ru','uk'].forEach(lang=>{
+      ['en','pl','de','ro','ru','uk'].forEach(lang=>{
         const panel = document.querySelector(`#vacLangPanels [data-lang-panel="${lang}"]`);
         const title = panel.querySelector('.vacTitle').value;
         if (!title) return;
@@ -2484,7 +2584,7 @@
 
   function renderCountryRow(group, c){
     const tr = document.createElement('tr');
-    const langBadges = ['en','de','ro','ru','uk'].filter(l => group[l]).map(l => l.toUpperCase()).join(' · ');
+    const langBadges = ['en','pl','de','ro','ru','uk'].filter(l => group[l]).map(l => l.toUpperCase()).join(' · ');
     tr.innerHTML = `
       <td>${c.flag_image_url ? `<img src="${escapeHtml(mediaUrl(c.flag_image_url))}" alt="" style="width:32px;height:22px;object-fit:cover;border-radius:4px;">` : escapeHtml(c.flag_emoji || '—')}</td>
       <td class="cell-name">${escapeHtml(c.name)}<br><span class="mono" style="font-size:10.5px;color:var(--ink-soft);">${langBadges}</span></td>
@@ -2525,7 +2625,7 @@
       ? `<img src="${mediaUrl(display.flag_image_url)}" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:10px;">`
       : '';
 
-    ['en','de','ro','ru','uk'].forEach(lang=>{
+    ['en','pl','de','ro','ru','uk'].forEach(lang=>{
       const row = group ? group[lang] : null;
       const panel = document.querySelector(`#ctryLangPanels [data-lang-panel="${lang}"]`);
       panel.querySelector('.ctryName').value = row?.name || '';
@@ -2566,7 +2666,7 @@
         return;
       }
       const requests = [];
-      ['en','de','ro','ru','uk'].forEach(lang=>{
+      ['en','pl','de','ro','ru','uk'].forEach(lang=>{
         const name = document.querySelector(`#ctryLangPanels [data-lang-panel="${lang}"] .ctryName`).value;
         if (!name) return;
         const payload = { ...shared, lang, name };
@@ -2725,7 +2825,7 @@
 
   function renderArticleRow(group, a){
     const tr = document.createElement('tr');
-    const langBadges = ['en','de','ro','ru','uk'].filter(l => group[l]).map(l => l.toUpperCase()).join(' · ');
+    const langBadges = ['en','pl','de','ro','ru','uk'].filter(l => group[l]).map(l => l.toUpperCase()).join(' · ');
     tr.innerHTML = `
       <td class="cell-name">${escapeHtml(a.title)}<br><span class="mono" style="font-size:10.5px;color:var(--ink-soft);">${langBadges}</span></td>
       <td>${escapeHtml(a.category || '—')}</td>
@@ -2759,7 +2859,7 @@
     const artPreview = document.getElementById('artCoverPreview');
     artPreview.innerHTML = display?.cover_image_url ? `<img src="${mediaUrl(display.cover_image_url)}" alt="" style="width:96px;height:64px;object-fit:cover;border-radius:8px;">` : '';
 
-    ['en','de','ro','ru','uk'].forEach(lang=>{
+    ['en','pl','de','ro','ru','uk'].forEach(lang=>{
       const row = group ? group[lang] : null;
       const panel = document.querySelector(`#artLangPanels [data-lang-panel="${lang}"]`);
       panel.querySelector('.artTitle').value = row?.title || '';
@@ -2802,7 +2902,7 @@
     }
     try {
       const requests = [];
-      ['en','de','ro','ru','uk'].forEach(lang=>{
+      ['en','pl','de','ro','ru','uk'].forEach(lang=>{
         const panel = document.querySelector(`#artLangPanels [data-lang-panel="${lang}"]`);
         const title = panel.querySelector('.artTitle').value;
         if (!title) return;
@@ -3124,7 +3224,7 @@
     const useMap = !!(display?.map_embed_url && !display?.photo_url);
     document.getElementById(useMap ? 'offVisualMapBtn' : 'offVisualPhotoBtn').click();
 
-    ['en','de','ro','ru','uk'].forEach(lang=>{
+    ['en','pl','de','ro','ru','uk'].forEach(lang=>{
       const row = group ? group[lang] : null;
       const panel = document.querySelector(`#offLangPanels [data-lang-panel="${lang}"]`);
       panel.querySelector('.offCity').value = row?.city_name || '';
@@ -3169,7 +3269,7 @@
         return;
       }
       const requests = [];
-      ['en','de','ro','ru','uk'].forEach(lang=>{
+      ['en','pl','de','ro','ru','uk'].forEach(lang=>{
         const panel = document.querySelector(`#offLangPanels [data-lang-panel="${lang}"]`);
         const cityName = panel.querySelector('.offCity').value;
         if (!cityName) return;
@@ -3250,7 +3350,7 @@
     document.getElementById('stepFieldNumber').value = display?.step_number || 1;
     document.getElementById('stepFieldOrder').value = display?.sort_order ?? 0;
 
-    ['en','de','ro','ru','uk'].forEach(lang=>{
+    ['en','pl','de','ro','ru','uk'].forEach(lang=>{
       const row = group ? group[lang] : null;
       const panel = document.querySelector(`#stpLangPanels [data-lang-panel="${lang}"]`);
       panel.querySelector('.stpTitle').value = row?.title || '';
@@ -3280,7 +3380,7 @@
     }
     try {
       const requests = [];
-      ['en','de','ro','ru','uk'].forEach(lang=>{
+      ['en','pl','de','ro','ru','uk'].forEach(lang=>{
         const panel = document.querySelector(`#stpLangPanels [data-lang-panel="${lang}"]`);
         const title = panel.querySelector('.stpTitle').value;
         if (!title) return;
@@ -3353,7 +3453,7 @@
     const preview = document.getElementById('teamPhotoPreview');
     preview.innerHTML = display?.photo_url ? `<img src="${mediaUrl(display.photo_url)}" alt="" style="width:64px;height:64px;object-fit:cover;border-radius:50%;">` : '';
 
-    ['en','de','ro','ru','uk'].forEach(lang=>{
+    ['en','pl','de','ro','ru','uk'].forEach(lang=>{
       const row = group ? group[lang] : null;
       const panel = document.querySelector(`#teamLangPanels [data-lang-panel="${lang}"]`);
       panel.querySelector('.teamName').value = row?.name || '';
@@ -3393,7 +3493,7 @@
         return;
       }
       const requests = [];
-      ['en','de','ro','ru','uk'].forEach(lang=>{
+      ['en','pl','de','ro','ru','uk'].forEach(lang=>{
         const panel = document.querySelector(`#teamLangPanels [data-lang-panel="${lang}"]`);
         const name = panel.querySelector('.teamName').value;
         if (!name) return;
@@ -3528,7 +3628,7 @@
     document.getElementById('licFieldIcon').value = display?.icon || '';
     document.getElementById('licFieldOrder').value = display?.sort_order ?? 0;
 
-    ['en','de','ro','ru','uk'].forEach(lang=>{
+    ['en','pl','de','ro','ru','uk'].forEach(lang=>{
       const row = group ? group[lang] : null;
       const panel = document.querySelector(`#licLangPanels [data-lang-panel="${lang}"]`);
       panel.querySelector('.licTitle').value = row?.title || '';
@@ -3557,7 +3657,7 @@
     }
     try {
       const requests = [];
-      ['en','de','ro','ru','uk'].forEach(lang=>{
+      ['en','pl','de','ro','ru','uk'].forEach(lang=>{
         const panel = document.querySelector(`#licLangPanels [data-lang-panel="${lang}"]`);
         const title = panel.querySelector('.licTitle').value;
         if (!title) return;
@@ -3625,7 +3725,7 @@
     document.getElementById('faqFieldSlug').value = display?.slug || '';
     document.getElementById('faqFieldOrder').value = display?.sort_order ?? 0;
 
-    ['en','de','ro','ru','uk'].forEach(lang=>{
+    ['en','pl','de','ro','ru','uk'].forEach(lang=>{
       const row = group ? group[lang] : null;
       const panel = document.querySelector(`#faqLangPanels [data-lang-panel="${lang}"]`);
       panel.querySelector('.faqQuestion').value = row?.question || '';
@@ -3652,7 +3752,7 @@
       return;
     }
     const requests = [];
-    ['en','de','ro','ru','uk'].forEach(lang=>{
+    ['en','pl','de','ro','ru','uk'].forEach(lang=>{
       const panel = document.querySelector(`#faqLangPanels [data-lang-panel="${lang}"]`);
       const question = panel.querySelector('.faqQuestion').value;
       if (!question) return;

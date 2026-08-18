@@ -1,11 +1,3 @@
-/* ============================================================
-   TEPIA GROUP — vacancy catalog (client-side demo data)
-   Once the backend is live, replace SAMPLE_VACANCIES with:
-     const res = await fetch(API_BASE + '/vacancies?lang=' + lang);
-     const { items } = await res.json();
-   The rendering/filtering logic below already expects this shape,
-   so no other change is needed.
-   ============================================================ */
 (function () {
   "use strict";
 
@@ -73,7 +65,6 @@
   const housingOnly = document.getElementById("vacHousingOnly");
   const clearBtn = document.getElementById("vacFilterClear");
 
-  // Preselect a country if arriving from a homepage/link filter, e.g. vacancies.html?country=Poland
   const params = new URLSearchParams(window.location.search);
   if (params.get("hot") === "1" && hotOnly) hotOnly.checked = true;
 
